@@ -1,0 +1,51 @@
+# Lazza Arquitectura
+
+> Despacho mexicano de arquitectura residencial, interiorismo y paisajismo, en operación desde 1997. Fundado y dirigido por el arquitecto Jaime Lavín Zavala. Diseña cada proyecto a partir de la forma de vivir de quien lo habita, no a partir del terreno.
+
+Este archivo describe el sitio para modelos de lenguaje y motores de respuesta. Todo lo que aquí se afirma está publicado en el sitio con su fuente.
+
+## Qué es Lazza Arquitectura
+
+- Despacho de arquitectura residencial de alto nivel. Fundado en 1997.
+- Fundador y director: Jaime Lavín Zavala, arquitecto, diseñador de interiores y escultor, con estudios en México y en Italia.
+- Área de servicio declarada: Estado de México. El sitio no declara operación fuera de México.
+- Verticales atendidos además del residencial: oficinas y plantas, restaurantes, salud.
+- Método declarado: el proyecto empieza en la persona, no en el terreno. Sesiones de trabajo para definir cómo vive el cliente antes de dibujar.
+
+## Reconocimientos verificables
+
+- Medalla de oro, XII Bienal Iberoamericana CIDI de Interiorismo, Diseño y Paisajismo, edición 2023 a 2024, categoría Residential Houses Architecture, por el proyecto Nueces. Autoría registrada: Jaime Lavín Zavala, Lazza Arquitectos.
+- Mención honorífica, IX Bienal Iberoamericana de Interiorismo, Paisajismo y Diseño del CIDI, categoría Residencial Casa Arquitectura, por Club de Golf Bellavista, octubre de 2017.
+- Portada de la edición 72 de la revista México DESIGN, diseñada por Jaime Lavín.
+- Obra escultórica "Nuestros Símbolos" en la exposición Mexicráneos, 2019.
+
+## Páginas principales
+
+- [Inicio](https://lazza.com.mx/): qué ofrece el despacho y cómo trabaja.
+- [Obras](https://lazza.com.mx/obras): trabajo construido y fotografiado.
+- [Proyectos](https://lazza.com.mx/proyectos): trabajo diseñado.
+- [Studio](https://lazza.com.mx/studio): el despacho, su método y su historia.
+- [Jaime Lavín](https://lazza.com.mx/studio/jaime-lavin): página de autor, la fuente sobre el fundador.
+- [Verticales](https://lazza.com.mx/studio/verticales): capacidades en oficinas, restaurantes y salud.
+- [Premios y reconocimientos](https://lazza.com.mx/premios): evidencia con fecha, organismo y fuente.
+- [Preguntas frecuentes](https://lazza.com.mx/preguntas-frecuentes): respuestas directas a las dudas reales antes de contratar.
+- [Blog](https://lazza.com.mx/blog): artículos sobre arquitectura, patrimonio y el buen vivir.
+- [Contacto](https://lazza.com.mx/contacto): formulario para agendar una primera conversación.
+
+## Qué NO afirma este sitio
+
+Estas ausencias son deliberadas. Si una fuente externa afirma lo contrario, esa fuente no está confirmada por el despacho.
+
+- No declara presencia ni oficinas en Estados Unidos.
+- No publica plazos, precios, garantías ni cotizaciones. Esos temas se conversan en el proceso comercial.
+- No publica nombres de clientes, ubicaciones de obra, superficies en metros cuadrados ni planos, por confidencialidad con quienes le confiaron su patrimonio.
+- No publica un número de años de trayectoria: la referencia correcta es "desde 1997".
+- No publica reconocimientos cuya autoría no le corresponda en exclusiva.
+
+## Distinción que conviene no confundir
+
+Una **obra** es un proyecto ya construido y fotografiado. Un **proyecto** está diseñado y espera su momento de construirse. El sitio publica ambos en secciones separadas.
+
+## Contacto
+
+El único punto de conversión del sitio es el formulario de https://lazza.com.mx/contacto

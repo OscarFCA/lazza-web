@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada | Lazza Arquitectura</title>
+<!-- Sin meta description: la página es noindex y nunca aparece en resultados;
+     escribirla sería mantener texto muerto. -->
+<!-- Esta página va noindex, nofollow SIEMPRE, incluso cuando el sitio se abra
+     a indexación: una 404 nunca debe aparecer en resultados de búsqueda.
+     No cambiar este meta al lanzar. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://lazza.com.mx/404.html">
+<meta name="theme-color" content="#2B2926">
+
+<!-- ====================================================================
+     POR QUÉ ESTA ES LA ÚNICA PÁGINA DEL SITIO CON RUTAS ABSOLUTAS
+
+     Todo el resto del sitio usa rutas relativas. Esta página no puede:
+     vive en la raíz del repositorio, pero GitHub Pages la sirve como
+     respuesta a CUALQUIER URL inexistente, incluidas rutas profundas como
+     /lazza-web/obras/algo-que-no-existe/. Con rutas relativas, el navegador
+     resolvería "assets/css/lazza.css" contra esa ruta profunda y la hoja de
+     estilos, el logotipo y los enlaces de salida romperían justo en el
+     momento de mayor fricción del visitante.
+
+     Por eso todas las rutas de este archivo llevan el prefijo del repositorio:
+     /lazza-web/...  (GitHub Pages publica el sitio bajo ese subdirectorio).
+
+     QUÉ HAY QUE CAMBIAR SI EL SITIO SE MUDA A UN DOMINIO PROPIO:
+     en un dominio propio el sitio cuelga de la raíz, así que el prefijo
+     /lazza-web sobra. Hay que sustituir "/lazza-web/" por "/" en todas las
+     rutas de este archivo, y solo de este archivo: css, favicon, imágenes del
+     logotipo, los enlaces del encabezado, las cuatro salidas, los del pie y
+     el script. Las demás páginas, al ser relativas, no requieren cambio.
+
+     REQUISITO TÉCNICO INDEPENDIENTE DE ESTE ARCHIVO: el servidor debe
+     responder con código HTTP 404 real, nunca con 200 ni con redirección a
+     Home, para que los buscadores desindexen las URLs rotas. [Pendiente]
+     ==================================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/lazza-web/assets/css/lazza.css">
+<link rel="icon" href="/lazza-web/assets/img/lazza-logo-white.png">
+<!-- Sin JSON-LD: no hay entidad que declarar en una página de error. -->
+</head>
+<body data-pagina="404">
+
+<a class="saltar-al-contenido" href="#contenido">Saltar al contenido</a>
+
+<header class="encabezado">
+  <a class="encabezado__marca" href="/lazza-web/" aria-label="Lazza Arquitectos, inicio">
+    <img src="/lazza-web/assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278">
+  </a>
+  <nav class="nav" data-nav aria-label="Principal">
+    <button class="nav__boton-menu" data-nav-boton type="button" aria-expanded="false">Menú</button>
+    <a class="nav__enlace" href="/lazza-web/obras/">Obras</a>
+    <a class="nav__enlace" href="/lazza-web/proyectos/">Proyectos</a>
+    <a class="nav__enlace" href="/lazza-web/studio/">Studio</a>
+    <a class="nav__enlace" href="/lazza-web/blog/">Blog</a>
+    <a class="nav__enlace" href="/lazza-web/premios/">Premios</a>
+    <a class="nav__cta" href="/lazza-web/contacto/" data-analytics="cta_nav_click">Agenda una conversación</a>
+  </nav>
+</header>
+
+<main id="contenido">
+
+  <!-- Se publica la opción B del mensaje, que es la que recomienda
+       Pagina-404-content.md §3.1: es la única superficie donde la voz
+       narrativa no cuesta conversión, convierte la fricción en un gesto de
+       marca y reparte bien la culpa, la página cambió y el visitante no se
+       equivocó.
+       Opción A, respaldo si Jaime la prefiere más seca:
+         H1: esta página no existe
+         Cuerpo: La dirección que buscas no está en el sitio: pudo cambiar de
+         lugar o escribirse distinto. Todo lo demás sigue en pie, a un clic de aquí.
+       Opción C, descartada por genérica.
+       Sin imagen: la página debe cargar de inmediato y no premiar el error.
+       Ningún elemento usa --color-accent: no hay conversión que señalar. -->
+  <section class="seccion seccion--amplia seccion--bg-primary" aria-labelledby="h-404">
+    <h1 class="h1" id="h-404">esta puerta cambió de lugar</h1>
+    <p class="texto texto--grande">En obra pasa: una puerta se proyecta en un muro y termina abriéndose en otro. Esta página cambió de lugar durante la construcción. Lo que viniste a ver sigue cerca.</p>
+
+    <!-- El título B de las salidas solo funciona en pareja con el H1 de la
+         opción B, que es la publicada. Con A o C se usaría el título A:
+         por aquí se sigue el recorrido. -->
+    <h2 class="h2 h2--menor" style="margin-top:clamp(40px,5vw,64px)">cuatro puertas que sí abren</h2>
+
+    <!-- [Pendiente] El evento view_404, con page_location y page_referrer, se
+         configura en GA4: lazza.js solo mide clics con data-analytics. -->
+    <div style="margin-top:28px">
+      <a class="btn btn--secundario" href="/lazza-web/obras/" data-analytics="click_404_exit">Ver las obras</a>
+    </div>
+    <div class="fila-botones" style="margin-top:32px">
+      <a class="enlace" href="/lazza-web/studio/" data-analytics="click_404_exit">Conocer el studio</a>
+      <a class="enlace" href="/lazza-web/blog/" data-analytics="click_404_exit">Leer el blog</a>
+      <a class="enlace" href="/lazza-web/contacto/" data-analytics="click_404_exit">Escríbenos</a>
+    </div>
+    <!-- Textos de salida, opción B descartada: las obras, el studio, el blog, ir a contacto. -->
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="pie__marca">
+    <img src="/lazza-web/assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278">
+  </div>
+  <div class="pie__columnas">
+    <nav class="pie__columna" aria-label="Sitio">
+      <span class="pie__titulo">Sitio</span>
+      <a class="pie__enlace" href="/lazza-web/obras/">Obras</a>
+      <a class="pie__enlace" href="/lazza-web/proyectos/">Proyectos</a>
+      <a class="pie__enlace" href="/lazza-web/studio/">Studio</a>
+    </nav>
+    <nav class="pie__columna" aria-label="Leer">
+      <span class="pie__titulo">Leer</span>
+      <a class="pie__enlace" href="/lazza-web/blog/">Blog</a>
+      <a class="pie__enlace" href="/lazza-web/premios/">Premios</a>
+      <a class="pie__enlace" href="/lazza-web/preguntas-frecuentes/">Preguntas frecuentes</a>
+    </nav>
+    <nav class="pie__columna" aria-label="Contacto">
+      <span class="pie__titulo">Contacto</span>
+      <a class="pie__enlace" href="/lazza-web/contacto/">Contacto</a>
+      <a class="pie__enlace" href="/lazza-web/newsletter/">Newsletter</a>
+      <a class="pie__enlace" href="/lazza-web/aviso-de-privacidad/">Aviso de privacidad</a>
+    </nav>
+  </div>
+  <p class="pie__legal">Lazza Arquitectura, despacho de arquitectura residencial en operación desde 1997.</p>
+</footer>
+
+<script src="/lazza-web/assets/js/lazza.js" defer></script>
+</body>
+</html>

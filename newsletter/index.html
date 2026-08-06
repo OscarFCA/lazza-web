@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Una carta mensual de arquitectura | Lazza Arquitectura</title>
+<meta name="description" content="Suscríbete a la carta mensual del despacho: una sola pieza al mes sobre habitar, patrimonio y el oficio de la arquitectura. Baja en un clic.">
+<!-- El sitio completo está en noindex mientras no se autoriza el lanzamiento.
+     Esta página sí debe indexarse el día que el sitio se abra. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://lazza.com.mx/newsletter/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Lazza Arquitectura">
+<meta property="og:title" content="Una carta al mes">
+<meta property="og:description" content="Una vez al mes recibes un texto para leer con calma: criterio, oficio y una historia sobre habitar mejor.">
+<meta name="theme-color" content="#2B2926">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/lazza.css">
+<link rel="icon" href="../assets/img/lazza-logo-white.png">
+<!-- [Pendiente] El "target" de SubscribeAction apunta al destino técnico del
+     formulario, que no existe hasta que se elija la plataforma de envío;
+     esa plataforma depende del correo de dominio propio. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://lazza.com.mx/newsletter/#pagina",
+      "url": "https://lazza.com.mx/newsletter/",
+      "name": "Una carta al mes",
+      "inLanguage": "es-MX",
+      "description": "Suscripción a la carta mensual del despacho, con consentimiento explícito y doble confirmación.",
+      "isPartOf": { "@id": "https://lazza.com.mx/#sitio" },
+      "publisher": { "@id": "https://lazza.com.mx/#organizacion" },
+      "potentialAction": {
+        "@type": "SubscribeAction",
+        "name": "Recibe la carta mensual"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body data-pagina="newsletter">
+
+<a class="saltar-al-contenido" href="#contenido">Saltar al contenido</a>
+
+<header class="encabezado">
+  <a class="encabezado__marca" href="../" aria-label="Lazza Arquitectos, inicio">
+    <img src="../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278">
+  </a>
+  <nav class="nav" data-nav aria-label="Principal">
+    <button class="nav__boton-menu" data-nav-boton type="button" aria-expanded="false">Menú</button>
+    <a class="nav__enlace" href="../obras/">Obras</a>
+    <a class="nav__enlace" href="../proyectos/">Proyectos</a>
+    <a class="nav__enlace" href="../studio/">Studio</a>
+    <a class="nav__enlace" href="../blog/">Blog</a>
+    <a class="nav__enlace" href="../premios/">Premios</a>
+    <a class="nav__cta" href="../contacto/" data-analytics="cta_nav_click">Agenda una conversación</a>
+  </nav>
+</header>
+
+<main id="contenido">
+
+  <!-- 1. Hero con formulario. Regla de la página: campo, casilla y botón caben
+       arriba del corte de primera pantalla en 390 px. La conversión de esta
+       página es suscribirse, no el formulario de contacto.
+
+       [Pendiente] Destino técnico: plataforma de envío de correos, que requiere
+       el correo de dominio propio (condición dura del proyecto). El action y el
+       method son marcador hasta entonces.
+       [Pendiente] Responsable de producción de la carta: sin él no sale el
+       primer envío, así que esta página no se publica antes. -->
+  <section class="hero-interior" aria-labelledby="h-newsletter">
+    <h1 class="h1" id="h-newsletter">una carta al mes</h1>
+    <!-- Opción B del H1: arquitectura contada por carta -->
+    <!-- Opción C del H1: la carta del despacho -->
+    <!-- [Supuesto] La descripción del contenido de la carta se sostiene hasta que
+         exista responsable de producción nombrado. La frecuencia mensual sí está
+         acordada y se puede prometer. -->
+    <p class="texto texto--grande">Una vez al mes recibes un texto para leer con calma: criterio, oficio y una historia sobre habitar mejor. Sin publicidad y con baja en un clic.</p>
+    <!-- Subtítulo, opción B: Recibes una sola pieza mensual, escrita para leerse
+         completa: una historia, un criterio de diseño y una idea sobre tu patrimonio.
+         Nada que sature tu bandeja. -->
+
+    <form class="form" id="suscripcion" data-form action="#" method="post" style="margin-top:clamp(32px,4vw,44px)">
+      <div class="campo">
+        <label class="campo__etiqueta" for="correo">TU CORREO</label>
+        <!-- Etiqueta, opción B: correo electrónico -->
+        <!-- El content.md solo define el estado de correo inválido. El mensaje
+             para el campo vacío queda pendiente de Jaime; mientras tanto se
+             reutiliza el mismo texto y no se inventa uno nuevo. [Pendiente] -->
+        <input class="campo__control" type="email" id="correo" name="correo"
+               autocomplete="email" placeholder="nombre@correo.com" required>
+        <p class="campo__error" role="alert"
+           data-vacio="Revisa tu correo: parece incompleto."
+           data-formato="Revisa tu correo: parece incompleto."></p>
+      </div>
+
+      <!-- Casilla de consentimiento: texto canónico único de
+           Aviso-de-privacidad-content.md §4.2, idéntico en las tres superficies.
+           Nunca premarcada. Aquí es obligatoria, porque la acción de la página
+           es suscribirse.
+           Estado pendiente de conexión: el mensaje "Marca la casilla de
+           consentimiento para suscribirte" lo emite la plataforma de envío;
+           lazza.js solo valida los controles .campo__control. [Pendiente] -->
+      <label class="casilla" for="consentimiento">
+        <input type="checkbox" id="consentimiento" name="consentimiento" value="si" required>
+        <span>Quiero recibir la carta mensual. Leí el <a href="../aviso-de-privacidad/">aviso de privacidad</a> y sé que puedo darme de baja cuando quiera.</span>
+      </label>
+
+      <button class="btn btn--primario" type="submit" data-analytics="newsletter_submit">Recibe la carta mensual</button>
+
+      <!-- Doble confirmación: se explica antes de suscribirse, para que el
+           correo de confirmación no llegue como sorpresa. -->
+      <p class="nota" style="margin-top:20px">La suscripción tiene doble confirmación: al enviar tu correo te llega un mensaje para confirmarla. Falta un paso: te enviamos un correo para confirmar tu suscripción. Ábrelo y listo.</p>
+      <!-- Éxito, opción B: Revisa tu bandeja: la suscripción se confirma desde el
+           correo que acabamos de enviarte. -->
+    </form>
+  </section>
+
+  <div class="foto-pendiente foto-pendiente--medio" role="img" aria-label="Interior de una obra residencial con luz natural de tarde sobre muros cálidos">
+    <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · NEWSLETTER<br>interior de obra, luz natural de tarde sobre muros cálidos<br>alt sin nombre de obra ni ubicación</span>
+  </div>
+
+  <!-- 2. ¿Para quién es? -->
+  <section class="seccion seccion--bg-primary" aria-labelledby="h-para-quien">
+    <p class="rotulo">Para quién</p>
+    <h2 class="h2" id="h-para-quien" style="margin-bottom:clamp(36px,5vw,56px)">esta carta es para ti si</h2>
+    <!-- Título, opción B: para quién escribimos cada mes -->
+    <div class="grid-3">
+      <article>
+        <h3 class="h3">estás por construir y quieres criterio antes que prisa</h3>
+        <!-- Opción B: Tienes el terreno, el sueño y muchas preguntas abiertas -->
+        <p class="texto">Tu casa involucra lo que has trabajado durante años y no quieres decidir a ciegas. Cada carta te da una forma de mirar: qué preguntar, qué observar y por qué el detalle importa antes de poner el primer ladrillo.</p>
+      </article>
+      <article>
+        <h3 class="h3">te interesa el oficio que hay detrás de los muros</h3>
+        <!-- Opción B: Disfrutas el arte y la cultura tanto como los planos -->
+        <p class="texto">No buscas noticias del sector, buscas lectura: la historia de un espacio, la razón de una proporción, la relación entre arte y arquitectura. La carta se escribe para leerse con café, no para hojearse.</p>
+      </article>
+      <article>
+        <h3 class="h3">comparas despachos y quieres conocer cómo piensa este</h3>
+        <!-- Opción B: Trabajas en el gremio y te interesa el método -->
+        <p class="texto">Antes de una primera conversación te sirve leer al despacho en su propia voz: cómo entiende el patrimonio, cómo planea, dónde pone el punto de apoyo. La carta es esa lectura, un mes tras otro.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 3. Beneficios de la carta -->
+  <section class="seccion seccion--bg-secondary" aria-labelledby="h-beneficios">
+    <p class="rotulo rotulo--tenue">Beneficios</p>
+    <h2 class="h2" id="h-beneficios" style="margin-bottom:clamp(36px,5vw,56px)">qué ganas al dejar tu correo</h2>
+    <!-- Título, opción B: lo que recibes cada mes -->
+    <div class="grid-3">
+      <article>
+        <h3 class="h3">una sola pieza, bien escrita</h3>
+        <!-- Opción B: Poco, pero pensado para durar -->
+        <p class="texto">No te llega un boletín semanal que termina sin abrirse. Te llega una carta al mes, trabajada como se trabaja un proyecto: con tiempo, con intención y con algo que decir.</p>
+      </article>
+      <article>
+        <h3 class="h3">criterio que puedes usar</h3>
+        <!-- Opción B: Ideas para decidir mejor -->
+        <!-- [Supuesto] Temario por validar con el responsable de producción. -->
+        <p class="texto">Cada entrega parte de una historia real del oficio y aterriza en un criterio que te llevas: cómo se lee la luz de un terreno, por qué un material perdura, qué revisar antes de firmar un proyecto.</p>
+      </article>
+      <article>
+        <h3 class="h3">tu correo se respeta</h3>
+        <!-- Opción B: Sin ruido en tu bandeja -->
+        <p class="texto">Tus datos se usan solo para enviarte la carta, con tu consentimiento explícito y nada premarcado. Cada correo trae el enlace para darte de baja, visible y de un clic. El <a class="enlace enlace--tenue" href="../aviso-de-privacidad/">aviso de privacidad</a> explica el resto.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 4. Autoridad de quien escribe. Solo hechos verificados. -->
+  <section class="grid-partido grid-partido--centrado seccion--bg-surface" aria-labelledby="h-autoridad">
+    <div style="padding:clamp(56px,7vw,96px) var(--grid-margin)">
+      <p class="rotulo rotulo--tenue">Autoridad</p>
+      <h2 class="h2 h2--menor" id="h-autoridad">quién está detrás de cada carta</h2>
+      <!-- Título, opción B: la mano que firma cada envío -->
+      <!-- Bloque de viñetas, opción A (cuatro viñetas). La opción B, de tres
+           viñetas, se descarta por ahora.
+           [Pendiente] Grafía del apellido Lavín, con o sin tilde.
+           [Supuesto] Firma editorial de cada carta, Jaime en primera persona o
+           el despacho, por definir con el responsable de producción. -->
+      <ul class="registro" style="grid-template-columns:1fr;max-width:560px">
+        <li><span class="registro__hecho">La voz detrás de la carta es la del despacho fundado en 1997 y dirigido por Jaime Lavín, arquitecto, diseñador de interiores y escultor</span></li>
+        <li><span class="registro__hecho">Escribir no es nuevo aquí: hay un archivo de 5 años de artículos publicados en Excélsior</span></li>
+        <li><span class="registro__hecho">El oficio tiene reconocimiento público: mención honorífica en la IX Bienal Iberoamericana del CIDI, 2017, entre más de 700 proyectos participantes</span></li>
+        <li><span class="registro__hecho">La formación cruza México e Italia, y el trabajo llega a portada: la edición 72 de México DESIGN, dedicada a espacios inteligentes, lleva diseño de Jaime</span></li>
+      </ul>
+    </div>
+    <div class="foto-pendiente foto-pendiente--profunda foto-pendiente--medio grid-partido__media" role="img" aria-label="Retrato de Jaime Lavín en un espacio diseñado por el despacho">
+      <span class="foto-pendiente__etiqueta">RETRATO · JAIME<br>en espacio diseñado por el despacho, nunca fondo neutro</span>
+    </div>
+  </section>
+
+  <!-- 5. CTA final. El formulario vive una sola vez en la página: lazza.js
+       enlaza la validación al primer elemento [data-form], así que un segundo
+       formulario quedaría sin validar. El cierre lleva al formulario del hero
+       con un ancla, que conserva la conversión y no duplica la medición. -->
+  <section class="seccion seccion--amplia seccion--bg-primary" aria-labelledby="h-cierre" style="display:flex;flex-direction:column;align-items:center;text-align:center">
+    <h2 class="h2" id="h-cierre" style="max-width:800px;margin:0 0 26px">la próxima carta sale este mes</h2>
+    <!-- Título, opción B: deja tu correo y lee con calma -->
+    <p class="texto" style="max-width:620px;margin-bottom:40px">Suscribirte cuesta un correo y salir cuesta un clic. Lo que queda en medio es una lectura mensual que te ayuda a mirar tu casa con más criterio.</p>
+    <!-- Texto de apoyo, opción B: Si el sitio te trajo hasta aquí, la carta es la forma
+         de quedarte cerca: una lectura al mes, con tu permiso explícito y con la puerta
+         abierta para salir. -->
+    <a class="btn btn--primario btn--grande" href="#suscripcion" data-analytics="newsletter_cta_final">Recibe la carta mensual</a>
+    <p class="nota" style="margin-top:32px"><a class="enlace enlace--tenue" href="../">Volver al inicio</a></p>
+    <!-- Enlace secundario, opción B: ir al inicio -->
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="pie__marca">
+    <img src="../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278">
+  </div>
+  <div class="pie__columnas">
+    <nav class="pie__columna" aria-label="Sitio">
+      <span class="pie__titulo">Sitio</span>
+      <a class="pie__enlace" href="../obras/">Obras</a>
+      <a class="pie__enlace" href="../proyectos/">Proyectos</a>
+      <a class="pie__enlace" href="../studio/">Studio</a>
+    </nav>
+    <nav class="pie__columna" aria-label="Leer">
+      <span class="pie__titulo">Leer</span>
+      <a class="pie__enlace" href="../blog/">Blog</a>
+      <a class="pie__enlace" href="../premios/">Premios</a>
+      <a class="pie__enlace" href="../preguntas-frecuentes/">Preguntas frecuentes</a>
+    </nav>
+    <nav class="pie__columna" aria-label="Contacto">
+      <span class="pie__titulo">Contacto</span>
+      <a class="pie__enlace" href="../contacto/">Contacto</a>
+      <a class="pie__enlace" href="./">Newsletter</a>
+      <a class="pie__enlace" href="../aviso-de-privacidad/">Aviso de privacidad</a>
+    </nav>
+  </div>
+  <p class="pie__legal">Lazza Arquitectura, despacho de arquitectura residencial en operación desde 1997.</p>
+</footer>
+
+<script src="../assets/js/lazza.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap de Lazza Arquitectura.
+
+  Las URL apuntan al dominio de producción, lazza.com.mx, no a la vista previa
+  de GitHub Pages. Es deliberado: este archivo se activa el día que el sitio
+  sustituya al actual. Mientras tanto robots.txt cierra el paso a buscadores y
+  este sitemap no se envía a Search Console.
+
+  No se listan /gracias/ ni /404.html: son páginas que nunca deben indexarse.
+  Las fechas son de creación del contenido; se actualizan al publicar.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url><loc>https://lazza.com.mx/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+
+  <url><loc>https://lazza.com.mx/obras/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lazza.com.mx/obras/vallescondido-el-parque/</loc><lastmod>2026-08-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lazza.com.mx/obras/ph-club-de-golf-bosques/</loc><lastmod>2026-08-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lazza.com.mx/obras/av-del-club/</loc><lastmod>2026-08-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lazza.com.mx/obras/ph-altezza/</loc><lastmod>2026-08-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lazza.com.mx/obras/cantil/</loc><lastmod>2026-08-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lazza.com.mx/obras/palma-del-rio/</loc><lastmod>2026-08-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lazza.com.mx/obras/meseta/</loc><lastmod>2026-08-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lazza.com.mx/obras/mimbres/</loc><lastmod>2026-08-05</lastmod><priority>0.7</priority></url>
+
+  <url><loc>https://lazza.com.mx/proyectos/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lazza.com.mx/proyectos/arboro-residencial/</loc><lastmod>2026-08-05</lastmod><priority>0.6</priority></url>
+  <url><loc>https://lazza.com.mx/proyectos/acceso-vallescondido/</loc><lastmod>2026-08-05</lastmod><priority>0.6</priority></url>
+  <url><loc>https://lazza.com.mx/proyectos/aguila-real/</loc><lastmod>2026-08-05</lastmod><priority>0.6</priority></url>
+  <url><loc>https://lazza.com.mx/proyectos/paseo-de-vallescondido/</loc><lastmod>2026-08-05</lastmod><priority>0.6</priority></url>
+  <url><loc>https://lazza.com.mx/proyectos/bejar/</loc><lastmod>2026-08-05</lastmod><priority>0.6</priority></url>
+  <url><loc>https://lazza.com.mx/proyectos/mayoral/</loc><lastmod>2026-08-05</lastmod><priority>0.6</priority></url>
+  <url><loc>https://lazza.com.mx/proyectos/sierra-paracaima/</loc><lastmod>2026-08-05</lastmod><priority>0.6</priority></url>
+  <url><loc>https://lazza.com.mx/proyectos/paseo-de-vallescondido-v/</loc><lastmod>2026-08-05</lastmod><priority>0.6</priority></url>
+  <url><loc>https://lazza.com.mx/proyectos/paseos/</loc><lastmod>2026-08-05</lastmod><priority>0.6</priority></url>
+  <url><loc>https://lazza.com.mx/proyectos/vila-sol/</loc><lastmod>2026-08-05</lastmod><priority>0.6</priority></url>
+  <url><loc>https://lazza.com.mx/proyectos/vila-punta/</loc><lastmod>2026-08-05</lastmod><priority>0.6</priority></url>
+
+  <url><loc>https://lazza.com.mx/studio/</loc><lastmod>2026-08-05</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lazza.com.mx/studio/jaime-lavin/</loc><lastmod>2026-08-05</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lazza.com.mx/studio/verticales/</loc><lastmod>2026-08-05</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://lazza.com.mx/premios/</loc><lastmod>2026-08-05</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lazza.com.mx/preguntas-frecuentes/</loc><lastmod>2026-08-05</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://lazza.com.mx/blog/</loc><lastmod>2026-08-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lazza.com.mx/blog/el-proyecto-no-empieza-en-el-terreno/</loc><lastmod>2026-08-05</lastmod><priority>0.6</priority></url>
+
+  <url><loc>https://lazza.com.mx/contacto/</loc><lastmod>2026-08-05</lastmod><changefreq>yearly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://lazza.com.mx/newsletter/</loc><lastmod>2026-08-05</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lazza.com.mx/aviso-de-privacidad/</loc><lastmod>2026-08-05</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+
+</urlset>

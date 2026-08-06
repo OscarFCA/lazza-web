@@ -1,0 +1,26 @@
+# Lazza Arquitectura
+#
+# ESTADO ACTUAL: vista previa en GitHub Pages, cerrada a buscadores.
+# El sitio de producción del despacho sigue siendo lazza.com.mx. Mientras los
+# dos existan, abrir este a indexación crearía dos sitios del mismo despacho
+# compitiendo entre sí, que es lo que más daña el posicionamiento del cliente.
+#
+# PARA ABRIR A INDEXACIÓN, el día que este sitio sustituya al actual:
+#   1. Cambiar el bloque de abajo por el que está comentado al final.
+#   2. Quitar <meta name="robots" content="noindex, nofollow"> de todas las
+#      páginas, MENOS de /gracias/ y /404.html, que nunca deben indexarse.
+#   3. Actualizar sitemap.xml con el dominio definitivo.
+#   4. Dar de alta el sitio en Search Console y enviar el sitemap.
+
+User-agent: *
+Disallow: /
+
+# ---------------------------------------------------------------------------
+# Configuración de producción, hoy inactiva:
+#
+# User-agent: *
+# Allow: /
+# Disallow: /gracias/
+#
+# Sitemap: https://lazza.com.mx/sitemap.xml
+# ---------------------------------------------------------------------------

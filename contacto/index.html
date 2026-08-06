@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto | Agenda una conversación | Lazza Arquitectura</title>
+<meta name="description" content="Escríbenos qué quieres construir. Formulario directo al despacho, respuesta personal y una primera conversación para empezar tu proyecto residencial.">
+<!-- El sitio completo está en noindex mientras no se autoriza el lanzamiento.
+     Esta página sí debe indexarse el día que el sitio se abra: es la página
+     de conversión. Al abrir indexación, cambiar por "index, follow". -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://lazza.com.mx/contacto/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Lazza Arquitectura">
+<meta property="og:title" content="Empieza por una conversación">
+<meta property="og:description" content="Escríbenos qué quieres construir o transformar. Leemos cada mensaje con calma y te respondemos de manera personal.">
+<meta name="theme-color" content="#2B2926">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/lazza.css">
+<link rel="icon" href="../assets/img/lazza-logo-white.png">
+<!-- Campos que NO se declaran hasta que existan, Contacto-content.md §5:
+     "telephone" (no consta) [Pendiente]
+     "openingHoursSpecification" (no consta) [Pendiente]
+     "contactPoint" con correo de dominio propio, mientras sea Gmail no se declara [Pendiente]
+     "geo" con coordenadas, se calculan con la dirección confirmada [Pendiente]
+     segunda oficina como "location" adicional, sin dirección publicada [Pendiente]
+     El bloque "address" que sigue no sube a producción hasta que Jaime
+     confirme la vigencia del domicilio, ver Contacto-content.md §3.7 y §8.10. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://lazza.com.mx/contacto/#pagina",
+      "url": "https://lazza.com.mx/contacto/",
+      "name": "Contacto",
+      "inLanguage": "es-MX",
+      "description": "Formulario de contacto del despacho y qué sucede después de escribir.",
+      "about": { "@id": "https://lazza.com.mx/#organizacion" },
+      "isPartOf": { "@id": "https://lazza.com.mx/#sitio" }
+    },
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://lazza.com.mx/#organizacion",
+      "name": "Lazza Arquitectura",
+      "url": "https://lazza.com.mx/",
+      "description": "Despacho mexicano de arquitectura residencial, interiorismo y paisajismo.",
+      "foundingDate": "1997",
+      "knowsLanguage": "es-MX",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida Lomas Verdes 825, Colonia Lomas Verdes tercera sección",
+        "addressLocality": "Naucalpan de Juárez",
+        "addressRegion": "Estado de México",
+        "postalCode": "53125",
+        "addressCountry": "MX"
+      },
+      "areaServed": { "@type": "AdministrativeArea", "name": "Zona Metropolitana del Valle de México" },
+      "founder": { "@id": "https://lazza.com.mx/studio/jaime-lavin#persona" }
+    }
+  ]
+}
+</script>
+</head>
+<body data-pagina="contacto">
+
+<a class="saltar-al-contenido" href="#contenido">Saltar al contenido</a>
+
+<header class="encabezado">
+  <a class="encabezado__marca" href="../" aria-label="Lazza Arquitectos, inicio">
+    <img src="../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278">
+  </a>
+  <nav class="nav" data-nav aria-label="Principal">
+    <button class="nav__boton-menu" data-nav-boton type="button" aria-expanded="false">Menú</button>
+    <a class="nav__enlace" href="../obras/">Obras</a>
+    <a class="nav__enlace" href="../proyectos/">Proyectos</a>
+    <a class="nav__enlace" href="../studio/">Studio</a>
+    <a class="nav__enlace" href="../blog/">Blog</a>
+    <a class="nav__enlace" href="../premios/">Premios</a>
+    <a class="nav__cta" href="./" aria-current="page" data-analytics="cta_nav_click">Agenda una conversación</a>
+  </nav>
+</header>
+
+<main id="contenido">
+
+  <!-- 1. Hero corto. Sin fotografía: nada compite con el formulario,
+       Contacto-content.md §5. -->
+  <section class="hero-interior" aria-labelledby="h-contacto">
+    <h1 class="h1" id="h-contacto">empieza por una conversación</h1>
+    <!-- Opción B del H1: cuéntanos cómo quieres vivir -->
+    <!-- Opción C del H1: tu proyecto empieza aquí -->
+    <p class="texto texto--grande">Escríbenos qué quieres construir o transformar. Leemos cada mensaje con calma y te respondemos de manera personal para agendar una primera conversación contigo.</p>
+    <!-- Subtítulo, opción B: Este es el primer paso del proceso: nos cuentas qué tienes
+         en mente, te leemos y te buscamos para conversar. Tu información queda protegida
+         por nuestro aviso de privacidad. -->
+  </section>
+
+  <!-- 2. Formulario. Conversión única del sitio: campos mínimos, cada uno
+       justificado en Contacto-content.md §3.2.
+
+       [Pendiente] destino técnico del formulario. El action y el method de
+       abajo son marcador, no destino real: el envío no se conecta hasta que
+       exista el correo de dominio propio operando, condición dura declarada
+       en Contacto-content.md §7. Mientras tanto la página no recibe tráfico.
+       Al conectar la herramienta de envío hay que definir también dónde se
+       almacena el consentimiento con fecha, origen y texto aceptado.
+
+       El evento form_start (primer foco en cualquier campo) todavía no está
+       implementado: lazza.js mide form_submit y form_error. Se agrega cuando
+       GA4 esté configurado. -->
+  <section class="seccion seccion--bg-secondary" aria-labelledby="h-formulario">
+    <h2 class="visualmente-oculto" id="h-formulario">Formulario de contacto</h2>
+    <form class="form" data-form action="../gracias/" method="post">
+
+      <div class="campo">
+        <label class="campo__etiqueta" for="nombre">NOMBRE</label>
+        <span class="campo__ayuda" id="ayuda-nombre">Cómo quieres que te llamemos</span>
+        <input class="campo__control" type="text" id="nombre" name="nombre"
+               autocomplete="name" required aria-describedby="ayuda-nombre">
+        <p class="campo__error" role="alert"
+           data-vacio="Escribe tu nombre para saber con quién conversamos."
+           data-formato="Escribe tu nombre para saber con quién conversamos."></p>
+      </div>
+
+      <div class="campo">
+        <label class="campo__etiqueta" for="correo">CORREO</label>
+        <span class="campo__ayuda" id="ayuda-correo">Para responderte por escrito</span>
+        <input class="campo__control" type="email" id="correo" name="correo"
+               autocomplete="email" required aria-describedby="ayuda-correo">
+        <p class="campo__error" role="alert"
+           data-vacio="Necesitamos tu correo para poder responderte."
+           data-formato="Este correo parece incompleto, revísalo."></p>
+      </div>
+
+      <!-- [Supuesto] Teléfono obligatorio. El embudo real del despacho es
+           conversacional y un lead sin teléfono no entra a él. Si en operación
+           frena envíos, se vuelve opcional: se decide con los datos de
+           form_error, Contacto-content.md §8.8. -->
+      <div class="campo">
+        <label class="campo__etiqueta" for="telefono">TELÉFONO</label>
+        <span class="campo__ayuda" id="ayuda-telefono">Te llamamos solo sobre tu proyecto</span>
+        <input class="campo__control" type="tel" id="telefono" name="telefono"
+               autocomplete="tel" inputmode="tel" pattern="[0-9+()\-\s]{10,}"
+               required aria-describedby="ayuda-telefono">
+        <p class="campo__error" role="alert"
+           data-vacio="Escribe un teléfono con lada para poder llamarte."
+           data-formato="Revisa el número, parece que faltan dígitos."></p>
+      </div>
+
+      <div class="campo">
+        <label class="campo__etiqueta" for="mensaje">MENSAJE (OPCIONAL)</label>
+        <span class="campo__ayuda" id="ayuda-mensaje">Cuéntanos qué quieres construir o transformar</span>
+        <textarea class="campo__control" id="mensaje" name="mensaje" rows="5"
+                  aria-describedby="ayuda-mensaje"></textarea>
+      </div>
+
+      <!-- Casilla de consentimiento: texto canónico único de
+           Aviso-de-privacidad-content.md §4.2. No admite variantes, porque lo
+           que se guarda como evidencia ante una solicitud ARCO es el texto
+           exacto aceptado. Nunca premarcada. Aquí es opcional: la conversión
+           de esta página es el mensaje, no la suscripción. -->
+      <label class="casilla" for="newsletter">
+        <input type="checkbox" id="newsletter" name="newsletter" value="si" data-analytics="newsletter_optin">
+        <span>Quiero recibir la carta mensual. Leí el <a href="../aviso-de-privacidad/">aviso de privacidad</a> y sé que puedo darme de baja cuando quiera.</span>
+      </label>
+
+      <!-- Único botón de la página. Estado "Enviando tu mensaje" durante el
+           envío, nunca deshabilitado por validación previa, §4.3. -->
+      <button class="btn btn--primario" type="submit" data-analytics="cta_contacto_submit">Agenda una primera conversación</button>
+      <!-- Opción B del botón: Empecemos la conversación -->
+      <!-- Opción C del botón: Quiero esa conversación -->
+
+      <p class="nota" style="margin-top:20px">Al enviar aceptas el <a class="enlace enlace--tenue" href="../aviso-de-privacidad/">aviso de privacidad</a>. Usamos tus datos solo para responderte.</p>
+      <!-- Línea de privacidad, opción B: Tus datos se usan solo para atender tu
+           mensaje, como explica el aviso de privacidad. -->
+    </form>
+  </section>
+
+  <!-- 3. Qué pasa cuando nos escribes. Resuelve la ansiedad posterior al envío
+       antes del envío. -->
+  <section class="seccion seccion--bg-primary" aria-labelledby="h-que-pasa">
+    <h2 class="h2" id="h-que-pasa" style="margin-bottom:clamp(36px,5vw,56px)">qué pasa cuando nos escribes</h2>
+    <ol class="pasos grid-3">
+      <li>
+        <span class="pasos__numero">01</span>
+        <h3 class="h3">tu mensaje llega a una persona</h3>
+        <!-- [Pendiente] Buzón de dominio propio y responsable de la primera lectura. -->
+        <p class="texto">Nadie externo filtra tu información: tu mensaje lo recibe directamente el despacho y se trata con confidencialidad desde el inicio.</p>
+      </li>
+      <li>
+        <span class="pasos__numero">02</span>
+        <h3 class="h3">te respondemos de manera personal</h3>
+        <!-- [Pendiente] El tiempo de primera respuesta que se declara públicamente
+             lo confirma Jaime; no se promete ninguno hasta entonces. -->
+        <p class="texto">Te contesta el despacho de manera directa, por escrito o por teléfono, para entender mejor lo que quieres construir.</p>
+      </li>
+      <li>
+        <span class="pasos__numero">03</span>
+        <h3 class="h3">agendamos la primera conversación contigo</h3>
+        <!-- [Supuesto] Que la primera conversación no tenga costo está por validar con Jaime. -->
+        <p class="texto">Si hay coincidencia, fijamos fecha para conocerte y escuchar tu proyecto con calma. Ahí empieza todo, sin costo ni compromiso.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- 4. Dónde estamos. Condición de publicación, Contacto-content.md §3.7:
+       el domicilio viene de la Presentación Empresarial 2020 y tiene seis años.
+       La Biblia declara operación desde Zona Esmeralda, que no es la misma zona.
+       Publicar una dirección equivocada es peor que no publicar ninguna, así
+       que la dirección, el mapa y la línea de la segunda oficina quedan aquí
+       comentados hasta que Jaime confirme vigencia.
+
+       [Pendiente] Domicilio con vigencia confirmada:
+       Avenida Lomas Verdes 825, Colonia Lomas Verdes tercera sección,
+       Naucalpan de Juárez, Estado de México, C.P. 53125.
+       [Pendiente] Mapa embebido de la sede de atención.
+       [Pendiente] Si las dos oficinas de 2020 siguen abiertas y cuál es la sede.
+       Línea subordinada, solo si se confirma abierta: También tenemos oficina
+       en Interlomas.
+       [Pendiente] Horario y teléfono: no constan en ninguna fuente y no se inventan.
+
+       Distinción para quien maquete: el domicilio del despacho sí se publica,
+       la ubicación de una obra no se publica nunca. El mapa señala una oficina,
+       jamás una casa de cliente. -->
+  <section class="seccion seccion--estrecha seccion--bg-surface" aria-labelledby="h-donde">
+    <p class="rotulo rotulo--tenue">Dónde estamos</p>
+    <h2 class="h2 h2--menor" id="h-donde">una oficina pensada para recibirte</h2>
+    <!-- Título, opción B: dónde estamos y cómo llegar -->
+    <p class="texto">Como arquitectos sabemos lo que pesa una ubicación. Por eso elegimos este punto: para atenderte con cercanía y recibirte cuando quieras conversar en persona.</p>
+    <!-- Texto, opción B: La ubicación también se proyecta. Nuestra oficina está en un
+         punto elegido para quedarte cerca y recibirte con calma cuando decidas venir
+         a conocernos. -->
+  </section>
+
+  <!-- 5 y 6. WhatsApp subordinado, nunca botón, y salida a preguntas frecuentes. -->
+  <section class="seccion seccion--estrecha seccion--bg-primary" aria-label="Otras formas de escribir">
+    <!-- [Pendiente] Número de WhatsApp oficial del despacho. El href queda
+         inerte hasta que Jaime lo confirme. -->
+    <p class="texto">¿Prefieres escribir por WhatsApp? Aquí también te leemos. <a class="enlace enlace--tenue" href="#whatsapp-pendiente" data-analytics="whatsapp_click">Escríbenos por WhatsApp</a></p>
+    <!-- Opción B: Si te queda más cómodo WhatsApp, escríbenos por ahí. -->
+    <p class="texto">¿Dudas antes de escribir? <a class="enlace enlace--tenue" href="../preguntas-frecuentes/" data-analytics="faq_link_click">Lee las preguntas frecuentes</a></p>
+    <!-- Opción B: Si prefieres leer primero, las preguntas frecuentes están aquí. -->
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="pie__marca">
+    <img src="../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278">
+  </div>
+  <div class="pie__columnas">
+    <nav class="pie__columna" aria-label="Sitio">
+      <span class="pie__titulo">Sitio</span>
+      <a class="pie__enlace" href="../obras/">Obras</a>
+      <a class="pie__enlace" href="../proyectos/">Proyectos</a>
+      <a class="pie__enlace" href="../studio/">Studio</a>
+    </nav>
+    <nav class="pie__columna" aria-label="Leer">
+      <span class="pie__titulo">Leer</span>
+      <a class="pie__enlace" href="../blog/">Blog</a>
+      <a class="pie__enlace" href="../premios/">Premios</a>
+      <a class="pie__enlace" href="../preguntas-frecuentes/">Preguntas frecuentes</a>
+    </nav>
+    <nav class="pie__columna" aria-label="Contacto">
+      <span class="pie__titulo">Contacto</span>
+      <a class="pie__enlace" href="./">Contacto</a>
+      <a class="pie__enlace" href="../newsletter/">Newsletter</a>
+      <a class="pie__enlace" href="../aviso-de-privacidad/">Aviso de privacidad</a>
+    </nav>
+  </div>
+  <p class="pie__legal">Lazza Arquitectura, despacho de arquitectura residencial en operación desde 1997.</p>
+</footer>
+
+<script src="../assets/js/lazza.js" defer></script>
+</body>
+</html>
