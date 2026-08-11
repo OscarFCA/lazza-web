@@ -525,17 +525,17 @@ button { font: inherit; border-radius: 0; }
 .media-completa { width: 100%; height: auto; }
 .media-completa--cubre { width: 100%; height: 100%; object-fit: cover; }
 
-/* Fotografía vertical dentro de un bloque partido. En escritorio recorta y
-   llena su mitad; en móvil se muestra entera, porque recortar un retrato
-   vertical a lo ancho de la pantalla deja fuera justo lo que hay que ver. */
+/* Fotografía vertical dentro de un bloque partido. Conserva el mismo hueco
+   4:3 que ocupaba el marcador: la imagen se recorta para llenarlo, nunca se
+   deforma ni estira el bloque. El height auto es necesario para que el
+   aspect-ratio gane al atributo height del <img>. */
 .media-retrato {
   width: 100%;
   height: auto;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: center top;
-}
-@media (min-width: 781px) {
-  .media-retrato { height: 100%; min-height: clamp(460px, 52vw, 700px); }
+  /* El encuadre baja al 58 %: ahí están el rostro reflejado y la mano */
+  object-position: center 74%;
 }
 
 .tarjeta__pie {
