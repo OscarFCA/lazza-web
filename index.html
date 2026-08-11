@@ -78,12 +78,25 @@
 
 <main id="contenido">
 
-  <!-- 1. Hero. Una sola imagen fija: sin carrusel, sin video con sonido.
-       Es regla de marca, no preferencia. -->
+  <!-- 1. Hero.
+       Video mudo, en bucle y sin controles. La regla de marca prohíbe el video
+       con sonido y el carrusel, no el movimiento: aquí no hay audio, no hay
+       controles y el visitante no tiene nada que operar.
+       El material se recortó al tramo 3.1 a 10.9 del original. Fuera quedaron,
+       a propósito: el acceso nocturno con el número de casa visible, la toma
+       aérea que geolocaliza el fraccionamiento, y el interior con el
+       automóvil del cliente. Ver README.
+       Se pausa solo si el visitante pide menos movimiento. -->
   <section class="hero" aria-label="Presentación">
-    <div class="foto-pendiente hero__media" role="img" aria-label="Interior de una obra residencial del despacho con luz natural de tarde">
-      <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · HERO<br>interior de obra terminada, luz natural de tarde, plano amplio, sin gente</span>
-    </div>
+    <video class="hero__media hero__video"
+           autoplay muted loop playsinline preload="metadata"
+           poster="assets/video/hero-poster.webp"
+           width="1600" height="900"
+           aria-label="Recorrido por los exteriores de una obra residencial del despacho, entre encinos">
+      <source src="assets/video/hero-movil.mp4" type="video/mp4" media="(max-width: 780px)">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero__scrim"></div>
     <div class="hero__contenido">
       <h1 class="h1">arquitectura residencial a tu medida</h1>
       <p class="texto">Diseñamos la casa que corresponde a tu forma de vivir: primero te entendemos, después dibujamos. Un proceso riguroso que convierte tu patrimonio en un lugar donde te sientes pleno.</p>

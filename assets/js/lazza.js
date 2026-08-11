@@ -32,6 +32,45 @@
   }
 
   /* ---------------------------------------------------------------------
+     Video del hero
+     El autoplay va en el HTML para que funcione aunque este archivo falle.
+     Aquí solo se corrige el caso en que el visitante pidió menos movimiento:
+     entonces se queda el póster fijo, que es exactamente lo que pidió.
+     --------------------------------------------------------------------- */
+  var video = document.querySelector('.hero__video');
+  if (video) {
+    var quietud = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    var aplicar = function () {
+      if (quietud.matches) {
+        video.pause();
+        video.removeAttribute('autoplay');
+        video.removeAttribute('loop');
+      } else if (video.paused) {
+        var intento = video.play();
+        /* Si el navegador rechaza el autoplay, no pasa nada: queda el póster */
+        if (intento && typeof intento.catch === 'function') { intento.catch(function () {}); }
+      }
+    };
+
+    aplicar();
+    if (typeof quietud.addEventListener === 'function') {
+      quietud.addEventListener('change', aplicar);
+    }
+
+    /* Fuera de pantalla no tiene sentido decodificar 8 segundos en bucle */
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (e) {
+          if (quietud.matches) return;
+          if (e.isIntersecting) { video.play().catch(function () {}); }
+          else { video.pause(); }
+        });
+      }, { threshold: 0.1 }).observe(video);
+    }
+  }
+
+  /* ---------------------------------------------------------------------
      Medición
      Cada elemento medible declara data-analytics con el nombre del evento.
      Si GA4 no está cargado, no pasa nada: la página funciona igual.

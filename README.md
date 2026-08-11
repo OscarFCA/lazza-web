@@ -17,7 +17,25 @@ Esta es una implementación completa lista para revisión, **no un sitio publica
 
 - 34 páginas construidas, 871 enlaces internos verificados sin roturas.
 - Cerrado a buscadores a propósito, ver "Indexación".
-- Sin fotografía real: cada imagen es un marcador etiquetado con lo que va ahí.
+- El hero de la home ya tiene video real. El resto del sitio sigue con marcadores etiquetados en lugar de fotografía.
+
+## El video del hero
+
+`assets/video/` guarda el material del hero: `hero.mp4` para escritorio, `hero-movil.mp4` para pantallas de hasta 780 px, y `hero-poster.webp`, que es lo que se ve mientras carga y lo que se queda fijo si el visitante pidió menos movimiento.
+
+Va mudo, en bucle, sin controles y sin audio en el archivo. La regla de marca prohíbe el video con sonido y el carrusel, no el movimiento: aquí no hay nada que el visitante tenga que operar.
+
+**El original venía de 23 MB, 15.3 s y con audio. Se recortó al tramo de 3.1 a 10.9 segundos**, y quedó en 2.5 MB entre los tres archivos. Fuera del corte quedaron, a propósito, tres cosas que las reglas del proyecto no permiten publicar:
+
+| Qué se recortó | Por qué |
+|---|---|
+| El acceso nocturno del inicio | Tiene el número de casa visible en el muro, y un número de casa es una dirección |
+| La toma aérea del final | Muestra el fraccionamiento completo con las casas vecinas: geolocaliza la obra |
+| El interior con el automóvil | Un vehículo particular dentro de la casa identifica al dueño en su propio círculo |
+
+Si en algún momento hace falta reponer parte de ese material, la fuente completa está en `../Assets/HeroImageVideo.mov` y el corte se rehace con ffmpeg cambiando los tiempos.
+
+**Legibilidad:** el video pasa por planos claros, así que el hero lleva un degradado local desde abajo y desde la izquierda, que es donde vive el texto. No es un velo plano sobre toda la imagen: oscurecer el cuadro entero apagaría la obra, que es justamente lo que se quiere mostrar.
 
 ## Stack
 

@@ -375,6 +375,30 @@ button { font: inherit; border-radius: 0; }
   object-fit: cover;
 }
 
+/* Video del hero. Mudo, en bucle, sin controles: es una fotografía que
+   respira, no una pieza que se reproduce. */
+.hero__video { background: var(--color-bg-surface); }
+
+/* Protección de legibilidad. El video pasa por planos claros (cielo blanco
+   entre los encinos) y el titular es blanco, así que el degradado no es
+   opcional. Va desde abajo, que es donde vive el texto, y deja limpia la
+   parte alta de la imagen: oscurecer el cuadro entero apagaría la obra. */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top,
+      rgba(35, 33, 32, .86) 0%,
+      rgba(35, 33, 32, .60) 26%,
+      rgba(35, 33, 32, .22) 52%,
+      rgba(35, 33, 32, 0) 76%),
+    linear-gradient(to right,
+      rgba(35, 33, 32, .42) 0%,
+      rgba(35, 33, 32, .12) 42%,
+      rgba(35, 33, 32, 0) 68%);
+}
+
 /* En el hero el marcador de fotografía se va a la esquina superior derecha:
    centrado chocaría con el titular, que es lo que de verdad hay que leer. */
 .hero__media.foto-pendiente {
@@ -885,8 +909,13 @@ textarea.campo__control { min-height: 120px; resize: vertical; }
   /* Área táctil mínima. Ojo: .nav__enlace queda fuera a propósito, porque
      debajo de 860px ya está oculto tras el menú y darle display aquí lo
      resucitaría encima del botón. */
-  .enlace, .pie__enlace { min-height: 44px; display: inline-flex; align-items: center; }
+  .pie__enlace { min-height: 44px; display: inline-flex; align-items: center; }
   .nav--abierta .nav__enlace { min-height: 44px; }
+
+  /* En .enlace el área táctil se crece con un pseudo-elemento y no con
+     min-height: si se estira la caja, el subrayado se despega del texto. */
+  .enlace { position: relative; }
+  .enlace::after { content: ""; position: absolute; inset: -12px 0; }
 }
 
 /* --------------------------------------------------------------------------
