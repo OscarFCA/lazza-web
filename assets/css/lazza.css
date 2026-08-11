@@ -368,7 +368,11 @@ button { font: inherit; border-radius: 0; }
 
 .hero {
   position: relative;
-  min-height: min(940px, 94vh);
+  min-height: min(1080px, 100vh);
+  /* svh es la altura de la ventana con las barras del navegador desplegadas.
+     Con vh a secas, en móvil el hero mide más que la pantalla y el CTA se va
+     abajo del pliegue justo cuando llega el visitante. */
+  min-height: min(1080px, 100svh);
   display: flex;
   align-items: flex-end;
   background: var(--color-bg-surface);
