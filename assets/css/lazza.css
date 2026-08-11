@@ -522,8 +522,24 @@ button { font: inherit; border-radius: 0; }
 
 /* Imagen que llena su contenedor. Sustituye al div .foto-pendiente cuando
    llega la fotografía real, sin estilos en línea repartidos por el HTML. */
-.media-completa { width: 100%; height: auto; }
-.media-completa--cubre { width: 100%; height: 100%; object-fit: cover; }
+/* Imagen que llena su contenedor sin deformarse nunca.
+   El tope de altura existe porque el archivo trae fotografía vertical: a
+   ancho completo, un retrato de 3:4 crece hasta dos mil píxeles y convierte
+   una galería en un tobogán. Al topar la altura, object-fit recorta en vez
+   de estirar. */
+.media-completa {
+  width: 100%;
+  height: auto;
+  max-height: 74vh;
+  object-fit: cover;
+  object-position: center;
+}
+.media-completa--cubre {
+  width: 100%;
+  height: 100%;
+  max-height: 74vh;
+  object-fit: cover;
+}
 
 /* Fotografía vertical dentro de un bloque partido. Conserva el mismo hueco
    4:3 que ocupaba el marcador: la imagen se recorta para llenarlo, nunca se
