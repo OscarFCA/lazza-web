@@ -309,6 +309,13 @@ button { font: inherit; border-radius: 0; }
 .encabezado__marca { display: block; flex-shrink: 0; }
 .encabezado__marca img { width: clamp(120px, 11vw, 164px); height: auto; background: none; }
 
+/* Sobre el video, la rúbrica puede caer en una zona clara. La palabra
+   "arquitectos" es fina y se pierde: esta sombra difusa la sostiene sin que
+   se lea como sombra. */
+.encabezado--sobre-foto .encabezado__marca img {
+  filter: drop-shadow(0 1px 12px rgba(35, 33, 32, .55));
+}
+
 .nav {
   display: flex;
   gap: clamp(16px, 2.4vw, 34px);
@@ -397,20 +404,30 @@ button { font: inherit; border-radius: 0; }
   inset: 0;
   pointer-events: none;
   background:
+    /* 1. Costura, corta: solo lo necesario para que la junta no se vea */
     linear-gradient(to top,
       var(--color-bg-primary) 0,
-      rgba(92, 79, 71, .94) 56px,
-      rgba(92, 79, 71, .55) 140px,
-      rgba(92, 79, 71, 0) 300px),
-    linear-gradient(to top,
-      rgba(35, 33, 32, .70) 200px,
-      rgba(35, 33, 32, .46) 38%,
-      rgba(35, 33, 32, .16) 58%,
-      rgba(35, 33, 32, 0) 78%),
-    linear-gradient(to right,
-      rgba(35, 33, 32, .40) 0%,
-      rgba(35, 33, 32, .12) 44%,
-      rgba(35, 33, 32, 0) 70%);
+      rgba(92, 79, 71, .92) 44px,
+      rgba(92, 79, 71, .42) 120px,
+      rgba(92, 79, 71, 0) 230px),
+    /* 2. Legibilidad, en elipse anclada a la esquina del texto y no a lo
+       ancho de la pantalla. Un degradado de borde a borde oscurecía la mitad
+       del cuadro, incluida la parte de la obra que hay que dejar ver. */
+    radial-gradient(
+      ellipse clamp(460px, 68vw, 1120px) clamp(430px, 60vh, 660px) at 3% 100%,
+      rgba(35, 33, 32, .84) 0%,
+      rgba(35, 33, 32, .62) 40%,
+      rgba(35, 33, 32, .30) 68%,
+      rgba(35, 33, 32, 0) 100%);
+}
+
+/* El texto del hero lleva su propia protección, muy difusa. Levantar la
+   opacidad del degradado hasta que el subtítulo se leyera sobre el tronco
+   iluminado habría apagado media obra; esto separa el texto del fondo sin
+   tocar la imagen. No es una sombra decorativa: no debe verse como tal. */
+.hero__contenido .h1,
+.hero__contenido .texto {
+  text-shadow: 0 1px 28px rgba(35, 33, 32, .62), 0 1px 3px rgba(35, 33, 32, .38);
 }
 
 /* En el hero el marcador de fotografía se va a la esquina superior derecha:
