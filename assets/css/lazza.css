@@ -307,7 +307,7 @@ button { font: inherit; border-radius: 0; }
 }
 
 .encabezado__marca { display: block; flex-shrink: 0; }
-.encabezado__marca img { width: clamp(120px, 11vw, 164px); height: auto; background: none; }
+.encabezado__marca img { width: clamp(96px, 8.6vw, 132px); height: auto; background: none; }
 
 /* Sobre el video, la rúbrica puede caer en una zona clara. La palabra
    "arquitectos" es fina y se pierde: esta sombra difusa la sostiene sin que
@@ -867,7 +867,9 @@ textarea.campo__control { min-height: 120px; resize: vertical; }
   gap: clamp(32px, 5vw, 48px);
   flex-wrap: wrap;
 }
-.pie__marca img { width: 168px; height: auto; opacity: .85; background: none; }
+/* El pie baja con el encabezado: si se queda en el tamaño anterior, la
+   rúbrica de abajo pesa más que la de arriba y el sitio se ve descuadrado. */
+.pie__marca img { width: 136px; height: auto; opacity: .85; background: none; }
 .pie__columnas { display: flex; gap: clamp(32px, 5vw, 64px); flex-wrap: wrap; }
 .pie__columna { display: flex; flex-direction: column; gap: 12px; }
 .pie__titulo {
