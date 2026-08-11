@@ -509,10 +509,21 @@ button { font: inherit; border-radius: 0; }
 .tarjeta__media {
   aspect-ratio: 4 / 3;
   width: 100%;
+  /* Sin este auto, el atributo height del <img> fija la altura y aspect-ratio
+     no llega a aplicarse: la tarjeta sale con el alto completo de la foto. */
+  height: auto;
   object-fit: cover;
+  /* En fotografía de arquitectura el edificio vive bajo la línea del horizonte.
+     Recortar por el centro deja tarjetas de puro cielo. */
+  object-position: center 62%;
   filter: brightness(.9);
   transition: filter var(--transition-image);
 }
+
+/* Imagen que llena su contenedor. Sustituye al div .foto-pendiente cuando
+   llega la fotografía real, sin estilos en línea repartidos por el HTML. */
+.media-completa { width: 100%; height: auto; }
+.media-completa--cubre { width: 100%; height: 100%; object-fit: cover; }
 
 .tarjeta__pie {
   display: flex;

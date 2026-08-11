@@ -116,9 +116,7 @@
     <div class="grid-2" style="margin-top:clamp(32px,5vw,44px)">
       <article>
         <a class="tarjeta" href="obras/" data-analytics="obras_link_click">
-          <span class="foto-pendiente foto-pendiente--4-3">
-            <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · OBRAS<br>exterior de obra construida, contrapicado, vegetación en cuadro</span>
-          </span>
+          <img class="tarjeta__media" src="assets/img/obras/vallescondido-el-parque-01.webp" alt="Fachada de una obra construida del despacho, vista desde el jardín entre árboles" width="1348" height="899" loading="lazy" decoding="async">
           <span class="tarjeta__pie">
             <span class="tarjeta__nombre">obras</span>
             <span class="tarjeta__accion">Ver las obras</span>
@@ -127,9 +125,7 @@
       </article>
       <article>
         <a class="tarjeta" href="proyectos/" data-analytics="proyectos_link_click">
-          <span class="foto-pendiente foto-pendiente--4-3">
-            <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · PROYECTOS<br>proyecto diseñado aún sin construir, imagen sin planos visibles</span>
-          </span>
+          <img class="tarjeta__media" src="assets/img/proyectos/vila-sol-01.webp" alt="Render de la fachada principal de un proyecto todavía sin construir" width="1800" height="1350" loading="lazy" decoding="async">
           <span class="tarjeta__pie">
             <span class="tarjeta__nombre">proyectos</span>
             <span class="tarjeta__accion">Ver los proyectos</span>
@@ -142,21 +138,20 @@
   <!-- 3. Obra destacada. Ficha permitida: solo nombre público y tipología.
        Nunca cliente, ubicación, metros, costo, plazo ni planos. -->
   <section class="grid-partido seccion--bg-secondary" aria-labelledby="h-destacada">
-    <div class="foto-pendiente foto-pendiente--alto grid-partido__media" role="img" aria-label="Fachada de una obra terminada del despacho a la hora dorada">
-      <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · OBRA DESTACADA<br>fachada de obra terminada, hora dorada<br>alt sin ubicación, cliente ni metraje</span>
-    </div>
+    <!-- Fotografía de obra del archivo del despacho, sustituye el marcador de fotografía pendiente. -->
+    <img class="media-completa--cubre grid-partido__media" src="assets/img/obras/meseta-01.webp" alt="Exterior de la obra entre vegetación, con los volados iluminados al anochecer" width="1800" height="1200" loading="lazy" decoding="async">
     <div style="padding:clamp(48px,6vw,80px) var(--grid-margin);display:flex;flex-direction:column;justify-content:center">
       <p class="rotulo rotulo--tenue">Obra destacada</p>
       <h2 class="h2 h2--menor" id="h-destacada">una obra para empezar a mirar</h2>
       <p class="texto" style="margin-bottom:40px">La fotografía dice más que cualquier argumento. Recorre una obra terminada y observa el detalle: ahí vive el criterio.</p>
       <div class="cartela">
         <div>
-          <p class="cartela__nombre">Obra cantil</p>
-          <p class="cartela__tipologia">Residencia · Arquitectura e interiorismo</p>
+          <p class="cartela__nombre">Obra meseta</p>
+          <p class="cartela__tipologia">Residencia</p>
         </div>
-        <span class="cartela__folio">O-005</span>
+        <span class="cartela__folio">O-007</span>
       </div>
-      <a class="enlace" style="align-self:flex-start;margin-top:36px" href="obras/cantil/" data-analytics="obra_destacada_click">Ver la obra</a>
+      <a class="enlace" style="align-self:flex-start;margin-top:36px" href="obras/meseta/" data-analytics="obra_destacada_click">Ver la obra</a>
     </div>
   </section>
 

@@ -26,7 +26,8 @@
   "@type": "CreativeWork",
   "name": "águila real",
   "creator": { "@type": "Organization", "@id": "https://lazza.com.mx/#organizacion", "name": "Lazza Arquitectura" },
-  "inLanguage": "es-MX"
+  "inLanguage": "es-MX",
+  "image": "https://lazza.com.mx/assets/img/proyectos/aguila-real-01.webp"
 }
 </script>
 </head>
@@ -36,7 +37,7 @@
 
 <header class="encabezado">
   <a class="encabezado__marca" href="../../" aria-label="Lazza Arquitectos, inicio">
-    <img src="../../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278">
+    <img src="../../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278" class="media-completa">
   </a>
   <nav class="nav" data-nav aria-label="Principal">
     <button class="nav__boton-menu" data-nav-boton type="button" aria-expanded="false">Menú</button>
@@ -63,9 +64,8 @@
        menciona como rasgo de sitio, nunca como ubicación identificable. -->
   <!-- Imagen de apertura, full-bleed -->
   <section aria-label="Imagen de apertura del proyecto">
-    <div class="foto-pendiente foto-pendiente--alto" role="img" aria-label="proyecto águila real, fachada con ventanales de grandes dimensiones frente al bosque de encinos, imagen de diseño, plano amplio, sin gente">
-      <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · APERTURA<br>proyecto águila real, fachada con ventanales de grandes dimensiones frente al bosque de encinos, imagen de diseño, plano amplio, sin gente</span>
-    </div>
+    <!-- Render de portafolio del despacho, sustituye el marcador de fotografía pendiente. -->
+    <img src="../../assets/img/proyectos/aguila-real-01.webp" alt="Render de la fachada con ventanales de grandes dimensiones frente a un bosque de encinos" width="1800" height="1014" loading="eager" fetchpriority="high" decoding="async" class="media-completa">
   </section>
 
   <!-- Cartela, elemento de firma de la marca. Ficha permitida: solo nombre y tipología. -->
@@ -81,18 +81,10 @@
     </div>
   </section>
 
-  <!-- Galería secuencial: llegada ya mostrada arriba; sigue estar, detalle, luz -->
-  <section class="seccion seccion--bg-primary" aria-label="Galería del proyecto">
-    <div class="foto-pendiente foto-pendiente--alto" role="img" aria-label="proyecto águila real, imagen de diseño de estancia de doble altura con vista al bosque de encinos" style="margin-bottom:24px">
-      <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · ESTAR<br>proyecto águila real, imagen de diseño de estancia de doble altura con vista al bosque de encinos</span>
-    </div>
-    <div class="foto-pendiente foto-pendiente--alto" role="img" aria-label="proyecto águila real, imagen de diseño de plafón diseñado con iluminación integrada" style="margin-bottom:24px">
-      <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · DETALLE<br>proyecto águila real, imagen de diseño de plafón diseñado con iluminación integrada</span>
-    </div>
-    <div class="foto-pendiente foto-pendiente--alto" role="img" aria-label="proyecto águila real, imagen de diseño de interior con luz de tarde entre ventanales">
-      <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · LUZ<br>proyecto águila real, imagen de diseño de interior con luz de tarde entre ventanales</span>
-    </div>
-  </section>
+  <!-- Galería secuencial: eliminada. El despacho solo entregó un render para este
+       proyecto (aguila-real-01.webp), ya usado arriba como imagen de apertura; no
+       hay renders adicionales para estar, detalle o luz, y una galería con huecos
+       rayados se ve peor que una galería corta. -->
 
   <!-- Texto de proyecto, opción A de Proyecto-content.md, ficha P-003 -->
   <section class="seccion seccion--bg-secondary" aria-label="Sobre el proyecto">
@@ -124,7 +116,7 @@
 
 <footer class="pie">
   <div class="pie__marca">
-    <img src="../../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278">
+    <img src="../../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278" class="media-completa">
   </div>
   <div class="pie__columnas">
     <nav class="pie__columna" aria-label="Sitio">

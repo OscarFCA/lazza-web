@@ -26,7 +26,8 @@
   "@type": "CreativeWork",
   "name": "vila punta",
   "creator": { "@type": "Organization", "@id": "https://lazza.com.mx/#organizacion", "name": "Lazza Arquitectura" },
-  "inLanguage": "es-MX"
+  "inLanguage": "es-MX",
+  "image": "https://lazza.com.mx/assets/img/proyectos/vila-punta-01.webp"
 }
 </script>
 </head>
@@ -36,7 +37,7 @@
 
 <header class="encabezado">
   <a class="encabezado__marca" href="../../" aria-label="Lazza Arquitectos, inicio">
-    <img src="../../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278">
+    <img src="../../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278" class="media-completa">
   </a>
   <nav class="nav" data-nav aria-label="Principal">
     <button class="nav__boton-menu" data-nav-boton type="button" aria-expanded="false">Menú</button>
@@ -57,9 +58,8 @@
 
   <!-- Imagen de apertura, full-bleed -->
   <section aria-label="Imagen de apertura del proyecto">
-    <div class="foto-pendiente foto-pendiente--alto" role="img" aria-label="proyecto vila punta, acceso al remate del proyecto, imagen de diseño, plano amplio, sin gente">
-      <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · APERTURA<br>proyecto vila punta, acceso al remate del proyecto, imagen de diseño, plano amplio, sin gente</span>
-    </div>
+    <!-- Render de portafolio del despacho, sustituye el marcador de fotografía pendiente. -->
+    <img src="../../assets/img/proyectos/vila-punta-01.webp" alt="Render de un acceso al remate del conjunto" width="1800" height="1350" loading="eager" fetchpriority="high" decoding="async" class="media-completa">
   </section>
 
   <!-- Cartela, elemento de firma de la marca. Ficha permitida: solo nombre y tipología. -->
@@ -75,17 +75,13 @@
     </div>
   </section>
 
-  <!-- Galería secuencial: llegada ya mostrada arriba; sigue estar, detalle, luz -->
+  <!-- Galería secuencial: llegada ya mostrada arriba; sigue estar.
+       Marcadores DETALLE y LUZ eliminados: el despacho entregó dos renders para
+       este proyecto y el segundo ya cubre estar; sin más renders de detalle o
+       interior, huecos rayados se verían peor que una galería corta. -->
   <section class="seccion seccion--bg-primary" aria-label="Galería del proyecto">
-    <div class="foto-pendiente foto-pendiente--alto" role="img" aria-label="proyecto vila punta, imagen de diseño de estancia con vista abierta y privacidad natural" style="margin-bottom:24px">
-      <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · ESTAR<br>proyecto vila punta, imagen de diseño de estancia con vista abierta y privacidad natural</span>
-    </div>
-    <div class="foto-pendiente foto-pendiente--alto" role="img" aria-label="proyecto vila punta, imagen de diseño de volumen sereno con textura de calidez" style="margin-bottom:24px">
-      <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · DETALLE<br>proyecto vila punta, imagen de diseño de volumen sereno con textura de calidez</span>
-    </div>
-    <div class="foto-pendiente foto-pendiente--alto" role="img" aria-label="proyecto vila punta, imagen de diseño de interior con luz y paisaje como materiales principales">
-      <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · LUZ<br>proyecto vila punta, imagen de diseño de interior con luz y paisaje como materiales principales</span>
-    </div>
+    <!-- Render de portafolio del despacho, sustituye el marcador de fotografía pendiente. -->
+    <img src="../../assets/img/proyectos/vila-punta-02.webp" alt="Render de la estancia con vista abierta y privacidad natural" width="1800" height="1354" loading="lazy" decoding="async" class="media-completa">
   </section>
 
   <!-- Texto de proyecto, opción A de Proyecto-content.md, ficha P-011 -->
@@ -118,7 +114,7 @@
 
 <footer class="pie">
   <div class="pie__marca">
-    <img src="../../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278">
+    <img src="../../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278" class="media-completa">
   </div>
   <div class="pie__columnas">
     <nav class="pie__columna" aria-label="Sitio">

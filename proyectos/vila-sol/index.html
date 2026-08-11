@@ -26,7 +26,8 @@
   "@type": "CreativeWork",
   "name": "vila sol",
   "creator": { "@type": "Organization", "@id": "https://lazza.com.mx/#organizacion", "name": "Lazza Arquitectura" },
-  "inLanguage": "es-MX"
+  "inLanguage": "es-MX",
+  "image": "https://lazza.com.mx/assets/img/proyectos/vila-sol-01.webp"
 }
 </script>
 </head>
@@ -36,7 +37,7 @@
 
 <header class="encabezado">
   <a class="encabezado__marca" href="../../" aria-label="Lazza Arquitectos, inicio">
-    <img src="../../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278">
+    <img src="../../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278" class="media-completa">
   </a>
   <nav class="nav" data-nav aria-label="Principal">
     <button class="nav__boton-menu" data-nav-boton type="button" aria-expanded="false">Menú</button>
@@ -57,9 +58,8 @@
 
   <!-- Imagen de apertura, full-bleed -->
   <section aria-label="Imagen de apertura del proyecto">
-    <div class="foto-pendiente foto-pendiente--alto" role="img" aria-label="proyecto vila sol, acceso orientado a la luz de la mañana, imagen de diseño, plano amplio, sin gente">
-      <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · APERTURA<br>proyecto vila sol, acceso orientado a la luz de la mañana, imagen de diseño, plano amplio, sin gente</span>
-    </div>
+    <!-- Render de portafolio del despacho, sustituye el marcador de fotografía pendiente. -->
+    <img src="../../assets/img/proyectos/vila-sol-01.webp" alt="Render de un acceso orientado a la luz de la mañana" width="1800" height="1350" loading="eager" fetchpriority="high" decoding="async" class="media-completa">
   </section>
 
   <!-- Cartela, elemento de firma de la marca. Ficha permitida: solo nombre y tipología. -->
@@ -75,17 +75,14 @@
     </div>
   </section>
 
-  <!-- Galería secuencial: llegada ya mostrada arriba; sigue estar, detalle, luz -->
+  <!-- Galería secuencial: llegada ya mostrada arriba; sigue estar, detalle.
+       Marcador LUZ eliminado: el despacho entregó tres renders para este proyecto
+       y los dos primeros ya cubren apertura y estar/detalle; sin un tercer render
+       de interior, un hueco rayado se vería peor que una galería corta. -->
   <section class="seccion seccion--bg-primary" aria-label="Galería del proyecto">
-    <div class="foto-pendiente foto-pendiente--alto" role="img" aria-label="proyecto vila sol, imagen de diseño de estancia abierta que sigue el sol" style="margin-bottom:24px">
-      <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · ESTAR<br>proyecto vila sol, imagen de diseño de estancia abierta que sigue el sol</span>
-    </div>
-    <div class="foto-pendiente foto-pendiente--alto" role="img" aria-label="proyecto vila sol, imagen de diseño de sombra proyectada a la medida" style="margin-bottom:24px">
-      <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · DETALLE<br>proyecto vila sol, imagen de diseño de sombra proyectada a la medida</span>
-    </div>
-    <div class="foto-pendiente foto-pendiente--alto" role="img" aria-label="proyecto vila sol, imagen de diseño de interior con luz de tarde">
-      <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · LUZ<br>proyecto vila sol, imagen de diseño de interior con luz de tarde</span>
-    </div>
+    <!-- Render de portafolio del despacho, sustituye el marcador de fotografía pendiente. -->
+    <img src="../../assets/img/proyectos/vila-sol-02.webp" alt="Render de la estancia abierta que sigue el recorrido del sol" width="1800" height="1350" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
+    <img src="../../assets/img/proyectos/vila-sol-03.webp" alt="Render de una sombra proyectada a la medida sobre el volumen" width="1800" height="1350" loading="lazy" decoding="async" class="media-completa">
   </section>
 
   <!-- Texto de proyecto, opción A de Proyecto-content.md, ficha P-010 -->
@@ -118,7 +115,7 @@
 
 <footer class="pie">
   <div class="pie__marca">
-    <img src="../../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278">
+    <img src="../../assets/img/lazza-logo-white.png" alt="Lazza Arquitectos" width="477" height="278" class="media-completa">
   </div>
   <div class="pie__columnas">
     <nav class="pie__columna" aria-label="Sitio">
