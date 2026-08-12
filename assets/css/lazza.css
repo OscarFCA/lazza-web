@@ -1100,3 +1100,64 @@ textarea.campo__control { min-height: 120px; resize: vertical; }
   .visor__anterior { left: 12px; }
   .visor__siguiente { right: 12px; }
 }
+
+/* --------------------------------------------------------------------------
+   Lectura a dos columnas
+   El texto corre a la izquierda y la imagen se queda fija a la derecha,
+   cambiando conforme avanza la lectura. Es la traducción a pantalla de la
+   plana impresa: el texto en columnas y la fotografía sosteniendo la página.
+   En móvil se deshace: una sola columna y las imágenes en el flujo, porque
+   una imagen fija en una pantalla de teléfono se come la lectura.
+   -------------------------------------------------------------------------- */
+
+.lectura {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(32px, 4vw, 56px);
+  align-items: start;
+}
+
+.lectura__bloque + .lectura__bloque { margin-top: clamp(28px, 4vw, 44px); }
+
+.lectura__figura {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.lectura__figura + .lectura__figura { margin-top: clamp(28px, 4vw, 40px); }
+.lectura__figura img { width: 100%; height: auto; }
+.lectura__pie { margin-top: 12px; }
+
+@media (min-width: 901px) {
+  .lectura { grid-template-columns: minmax(0, 1fr) minmax(0, .82fr); }
+
+  .lectura__panel {
+    position: sticky;
+    top: clamp(56px, 9vh, 96px);
+    height: min(74vh, 660px);
+  }
+
+  /* Las tres figuras ocupan el mismo lugar y se turnan */
+  .lectura__figura {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .45s ease, visibility .45s;
+    justify-content: center;
+  }
+  .lectura__figura + .lectura__figura { margin-top: 0; }
+  .lectura__figura--activa { opacity: 1; visibility: visible; }
+
+  .lectura__figura img {
+    max-height: calc(min(74vh, 660px) - 68px);
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    align-self: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lectura__figura { transition: none; }
+}

@@ -102,6 +102,56 @@
   }, { passive: true });
 
   /* ---------------------------------------------------------------------
+     Lectura a dos columnas
+     La imagen fija de la derecha cambia según el bloque de texto que se está
+     leyendo. Si este archivo no corre, quedan las tres figuras apiladas y el
+     artículo se lee igual: el CSS solo las superpone en escritorio.
+     --------------------------------------------------------------------- */
+  var panel = document.querySelector('[data-panel]');
+  var bloques = [].slice.call(document.querySelectorAll('[data-lectura]'));
+
+  if (panel && bloques.length && 'IntersectionObserver' in window) {
+    var figuras = [].slice.call(panel.querySelectorAll('[data-figura]'));
+    var anchoDeEscritorio = window.matchMedia('(min-width: 901px)');
+    var actual = null;
+
+    var mostrar = function (clave) {
+      if (clave === actual) return;
+      actual = clave;
+      figuras.forEach(function (f) {
+        f.classList.toggle('lectura__figura--activa', f.getAttribute('data-figura') === clave);
+      });
+    };
+
+    /* La franja central de la pantalla decide qué se está leyendo: si el
+       bloque cruza esa línea, su imagen es la que toca. */
+    var observador = new IntersectionObserver(function (entradas) {
+      if (!anchoDeEscritorio.matches) return;
+      var visibles = entradas.filter(function (e) { return e.isIntersecting; });
+      if (!visibles.length) return;
+      visibles.sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      mostrar(visibles[0].target.getAttribute('data-lectura'));
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+    bloques.forEach(function (b) { observador.observe(b); });
+
+    /* Al pasar a una columna, todas las figuras se ven y no hay nada que
+       turnar: se limpia el estado para no dejar una escondida. */
+    var ajustar = function () {
+      if (!anchoDeEscritorio.matches) {
+        figuras.forEach(function (f) { f.classList.remove('lectura__figura--activa'); });
+        actual = null;
+      } else if (!actual) {
+        mostrar(figuras[0].getAttribute('data-figura'));
+      }
+    };
+    ajustar();
+    if (typeof anchoDeEscritorio.addEventListener === 'function') {
+      anchoDeEscritorio.addEventListener('change', ajustar);
+    }
+  }
+
+  /* ---------------------------------------------------------------------
      Visor de imagen
      Amplía las imágenes del portafolio. Se arma sobre lo que ya existe en la
      página: no hay marcado especial en el HTML, así que si este archivo falla
