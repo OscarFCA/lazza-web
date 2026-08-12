@@ -106,27 +106,50 @@
     </div>
   </section>
 
-  <!-- 2. Portafolio. PROVISIONAL, 12 de agosto de 2026.
-       La sección mostraba dos tarjetas, obras y proyectos, con el microcopy
-       que explica la diferencia entre lo construido y lo diseñado. Ese
-       microcopy vuelve en cuanto se sepa cuáles de los once proyectos están
-       construidos: es el riesgo H2 del reporte Nielsen y no se pierde.
-       Mientras tanto la home no puede mandar a una sección sin contenido. -->
+  <!-- 2. Portafolio.
+       Rediseñada el 12 de agosto de 2026: la versión anterior tenía una sola
+       tarjeta y dejaba media pantalla vacía. Ahora la sección enseña obra, que
+       es lo que el visitante vino a ver, y el enlace de abajo lleva al resto.
+       Cuando se sepa cuáles de los once están construidos, esta sección
+       recupera la dupla obras y proyectos con el microcopy que explica la
+       diferencia entre lo construido y lo diseñado, que es el riesgo H2 del
+       reporte Nielsen. -->
   <section class="seccion seccion--bg-primary" aria-labelledby="h-portafolio">
     <p class="rotulo">Portafolio</p>
     <h2 class="h2" id="h-portafolio">el trabajo del despacho</h2>
     <p class="texto">Casas, departamentos y espacios diseñados desde la vida de quien los habita. Entra a verlos con calma.</p>
-    <div style="margin-top:clamp(32px,5vw,44px);max-width:820px">
+    <div class="grid-2" style="margin-top:clamp(32px,5vw,44px)">
       <article>
-        <a class="tarjeta" href="proyectos/" data-analytics="proyectos_link_click">
-          <img class="tarjeta__media" src="assets/img/proyectos/vila-sol-01.webp" alt="Render de la fachada principal de una casa del despacho al anochecer" width="1800" height="1350" loading="lazy" decoding="async">
+        <a class="tarjeta" href="proyectos/vila-sol/" data-analytics="portafolio_card_click" data-proyecto="vila-sol">
+          <img class="tarjeta__media" src="assets/img/proyectos/vila-sol-01.webp" alt="Render de una casa al anochecer, con el volado de madera sobre el acceso" width="1800" height="1350" loading="lazy" decoding="async">
           <span class="tarjeta__pie">
-            <span class="tarjeta__nombre">proyectos</span>
-            <span class="tarjeta__accion">Ver los proyectos</span>
+            <span class="tarjeta__nombre">vila sol</span>
+            <span class="tarjeta__accion">Ver el proyecto</span>
+          </span>
+        </a>
+      </article>
+      <article>
+        <a class="tarjeta" href="proyectos/bejar/" data-analytics="portafolio_card_click" data-proyecto="bejar">
+          <img class="tarjeta__media" src="assets/img/proyectos/bejar-01.webp" alt="Render de una casa de volumen curvo con los interiores iluminados" width="1800" height="1012" loading="lazy" decoding="async">
+          <span class="tarjeta__pie">
+            <span class="tarjeta__nombre">bejar</span>
+            <span class="tarjeta__accion">Ver el proyecto</span>
+          </span>
+        </a>
+      </article>
+      <article>
+        <a class="tarjeta" href="proyectos/paseos/" data-analytics="portafolio_card_click" data-proyecto="paseos">
+          <img class="tarjeta__media" src="assets/img/proyectos/paseos-01.webp" alt="Render de la fachada de una casa con celosía vertical y cochera cubierta" width="1800" height="1012" loading="lazy" decoding="async">
+          <span class="tarjeta__pie">
+            <span class="tarjeta__nombre">paseos</span>
+            <span class="tarjeta__accion">Ver el proyecto</span>
           </span>
         </a>
       </article>
     </div>
+    <p style="margin-top:clamp(28px,4vw,40px)">
+      <a class="enlace" href="proyectos/" data-analytics="proyectos_link_click">Ver los once proyectos</a>
+    </p>
   </section>
 
   <!-- 3. Proyecto destacado. PROVISIONAL: era obra destacada y apuntaba a
