@@ -1006,3 +1006,97 @@ textarea.campo__control { min-height: 120px; resize: vertical; }
   body { background: #fff; color: #000; }
   .h1, .h2, .h3, .texto, .prosa p { color: #000; }
 }
+
+/* --------------------------------------------------------------------------
+   Visor de imagen
+   Amplía una imagen del portafolio a pantalla completa. Sin librerías y sin
+   dependencias: si el JS no carga, las imágenes siguen siendo imágenes y la
+   página funciona igual.
+   Registro de museo: fondo oscuro, sin radios, sin sombras, movimiento mínimo.
+   -------------------------------------------------------------------------- */
+
+/* La imagen ampliable avisa que lo es, sin decorarla */
+.ampliable { cursor: zoom-in; }
+.ampliable:focus-visible { outline: 1px solid var(--color-text-secondary); outline-offset: 3px; }
+
+.visor {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(35, 33, 32, .97);
+  padding: clamp(56px, 8vh, 96px) clamp(16px, 5vw, 88px);
+}
+.visor[open], .visor.visor--abierto { display: flex; }
+
+.visor__figura {
+  margin: 0;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* contain, nunca cover: aquí la imagen se ve completa y sin deformar */
+.visor__img {
+  max-width: min(1600px, 92vw);
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: var(--color-bg-surface);
+}
+
+.visor__pie {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(16px, 3vw, 32px);
+  max-width: min(1600px, 92vw);
+}
+.visor__leyenda {
+  font: 400 13px/1.6 var(--font-body);
+  letter-spacing: .04em;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+.visor__contador {
+  font: 400 13px/1.6 var(--font-mono);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  margin: 0;
+}
+
+.visor__boton {
+  position: absolute;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, .28);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 300 22px/1 var(--font-body);
+  transition: border-color var(--transition-base), background-color var(--transition-base);
+}
+.visor__boton:hover { background: rgba(255, 255, 255, .06); border-color: var(--color-text-secondary); }
+.visor__boton[hidden] { display: none; }
+
+.visor__cerrar { top: clamp(16px, 3vh, 28px); right: clamp(16px, 3vw, 28px); }
+.visor__anterior { left: clamp(8px, 2vw, 28px); top: 50%; transform: translateY(-50%); }
+.visor__siguiente { right: clamp(8px, 2vw, 28px); top: 50%; transform: translateY(-50%); }
+
+@media (max-width: 640px) {
+  .visor { padding: 64px 12px 84px; }
+  .visor__img { max-height: 66vh; }
+  /* En móvil las flechas bajan al pie: a los lados tapan la imagen */
+  .visor__anterior, .visor__siguiente { top: auto; bottom: 16px; transform: none; }
+  .visor__anterior { left: 12px; }
+  .visor__siguiente { right: 12px; }
+}

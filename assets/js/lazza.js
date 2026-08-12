@@ -102,6 +102,114 @@
   }, { passive: true });
 
   /* ---------------------------------------------------------------------
+     Visor de imagen
+     Amplía las imágenes del portafolio. Se arma sobre lo que ya existe en la
+     página: no hay marcado especial en el HTML, así que si este archivo falla
+     las imágenes siguen siendo imágenes y no queda un botón muerto.
+     --------------------------------------------------------------------- */
+  var galeria = [].slice.call(
+    document.querySelectorAll('main img.media-completa, main img.media-retrato')
+  );
+
+  if (galeria.length) {
+    var visor, imagen, leyenda, contador, btnPrev, btnNext, btnCerrar;
+    var indice = 0;
+    var quienAbrio = null;
+
+    var construir = function () {
+      visor = document.createElement('div');
+      visor.className = 'visor';
+      visor.setAttribute('role', 'dialog');
+      visor.setAttribute('aria-modal', 'true');
+      visor.setAttribute('aria-label', 'Imagen ampliada');
+      visor.innerHTML =
+        '<button class="visor__boton visor__cerrar" type="button" aria-label="Cerrar la imagen">✕</button>' +
+        '<button class="visor__boton visor__anterior" type="button" aria-label="Imagen anterior">‹</button>' +
+        '<button class="visor__boton visor__siguiente" type="button" aria-label="Imagen siguiente">›</button>' +
+        '<figure class="visor__figura">' +
+        '<img class="visor__img" alt="">' +
+        '<figcaption class="visor__pie">' +
+        '<p class="visor__leyenda"></p><p class="visor__contador"></p>' +
+        '</figcaption></figure>';
+      document.body.appendChild(visor);
+
+      imagen    = visor.querySelector('.visor__img');
+      leyenda   = visor.querySelector('.visor__leyenda');
+      contador  = visor.querySelector('.visor__contador');
+      btnPrev   = visor.querySelector('.visor__anterior');
+      btnNext   = visor.querySelector('.visor__siguiente');
+      btnCerrar = visor.querySelector('.visor__cerrar');
+
+      btnCerrar.addEventListener('click', cerrarVisor);
+      btnPrev.addEventListener('click', function () { mover(-1); });
+      btnNext.addEventListener('click', function () { mover(1); });
+      /* Clic fuera de la imagen cierra; sobre la imagen, no */
+      visor.addEventListener('click', function (e) { if (e.target === visor) cerrarVisor(); });
+    };
+
+    var pintar = function () {
+      var el = galeria[indice];
+      imagen.src = el.currentSrc || el.src;
+      imagen.alt = el.alt || '';
+      leyenda.textContent = el.alt || '';
+      contador.textContent = (indice + 1) + ' / ' + galeria.length;
+      var unaSola = galeria.length < 2;
+      btnPrev.hidden = unaSola;
+      btnNext.hidden = unaSola;
+    };
+
+    var mover = function (paso) {
+      indice = (indice + paso + galeria.length) % galeria.length;
+      pintar();
+    };
+
+    var abrirVisor = function (i) {
+      if (!visor) construir();
+      quienAbrio = galeria[i];
+      indice = i;
+      pintar();
+      visor.classList.add('visor--abierto');
+      document.body.style.overflow = 'hidden';
+      btnCerrar.focus();
+      enviar('galeria_zoom', {
+        pagina: document.body.getAttribute('data-pagina') || '',
+        imagen: (galeria[i].getAttribute('src') || '').split('/').pop()
+      });
+    };
+
+    var cerrarVisor = function () {
+      visor.classList.remove('visor--abierto');
+      document.body.style.overflow = '';
+      if (quienAbrio) { quienAbrio.focus(); quienAbrio = null; }
+    };
+
+    galeria.forEach(function (img, i) {
+      img.classList.add('ampliable');
+      img.setAttribute('role', 'button');
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('aria-label', 'Ampliar: ' + (img.alt || 'imagen del proyecto'));
+      img.addEventListener('click', function () { abrirVisor(i); });
+      img.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrirVisor(i); }
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!visor || !visor.classList.contains('visor--abierto')) return;
+      if (e.key === 'Escape') { e.preventDefault(); cerrarVisor(); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); mover(-1); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); mover(1); }
+      else if (e.key === 'Tab') {
+        /* El foco se queda dentro del visor mientras está abierto */
+        var focos = [btnCerrar, btnPrev, btnNext].filter(function (b) { return !b.hidden; });
+        var pos = focos.indexOf(document.activeElement);
+        e.preventDefault();
+        focos[(pos + (e.shiftKey ? -1 : 1) + focos.length) % focos.length].focus();
+      }
+    });
+  }
+
+  /* ---------------------------------------------------------------------
      Validación de formulario
      Corre al enviar, no mientras se escribe: interrumpir a alguien que
      todavía está escribiendo su nombre es hostil.
