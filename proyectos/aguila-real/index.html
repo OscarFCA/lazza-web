@@ -63,7 +63,7 @@
        menciona como rasgo de sitio, nunca como ubicación identificable. -->
   <!-- MATERIAL FOTOGRÁFICO, NO REPONER LO DESCARTADO.
        El cliente entregó 25 fotografías profesionales de la obra terminada. En la
-       página se publican 8 (aguila-real-01 a -08) más el render original (-09).
+       página se publican 8 (aguila-real-02 a -09) y el render original abre como -01.
        Existen más fotografías en el material original: dos de ellas quedaron fuera
        de forma deliberada porque muestran un automóvil de colección del dueño
        dentro de la casa, dato marcado como sensible por la Biblia de marca y por
@@ -74,7 +74,13 @@
   <!-- Imagen de apertura, full-bleed -->
   <section aria-label="Imagen de apertura del proyecto">
     <!-- Fotografía profesional de la obra terminada, sustituye al render que hasta hoy era portada. -->
-    <img src="../../assets/img/proyectos/aguila-real-01.webp" alt="Volado de madera iluminado sobre la terraza al anochecer, con la casa encendida por dentro" width="1800" height="1199" loading="eager" fetchpriority="high" decoding="async" class="media-completa">
+    <!-- La portada es el render con que se presentó el proyecto, por decisión del
+         cliente. Va rotulado: la casa está construida y las fotografías vienen
+         enseguida, así que presentarlo sin aclarar sería confuso. -->
+    <figure style="margin:0">
+      <img src="../../assets/img/proyectos/aguila-real-01.webp" alt="Render de la casa al anochecer, dibujada antes de construirse" width="1800" height="1013" loading="eager" fetchpriority="high" decoding="async" class="media-completa">
+      <figcaption class="rotulo rotulo--tenue" style="margin-top:12px">Render del proyecto. Enseguida, la casa construida</figcaption>
+    </figure>
   </section>
 
   <!-- Cartela, elemento de firma de la marca. Ficha permitida: solo nombre y tipología. -->
@@ -97,20 +103,14 @@
   <!-- Galería secuencial: llegada ya mostrada arriba; sigue acceso, vestíbulo, estar,
        detalle y, al final, el render original del proyecto, presentado como render. -->
   <section class="seccion seccion--bg-primary" aria-label="Galería del proyecto">
-    <img src="../../assets/img/proyectos/aguila-real-02.webp" alt="Llegada nocturna entre los árboles del terreno, con la casa iluminada al fondo" width="1800" height="1200" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
-    <img src="../../assets/img/proyectos/aguila-real-03.webp" alt="Vestíbulo de doble altura con escalera, muro de piedra y la cava de vinos detrás del cristal" width="1800" height="1200" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
-    <img src="../../assets/img/proyectos/aguila-real-04.webp" alt="Comedor con mesa larga bajo un plafón de madera y una escultura de venado sobre la mesa" width="1800" height="1199" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
-    <img src="../../assets/img/proyectos/aguila-real-05.webp" alt="Cava de vinos de piso a techo tras un cristal, con la barra al fondo" width="1800" height="1199" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
-    <img src="../../assets/img/proyectos/aguila-real-06.webp" alt="Estancia con chimenea lineal, mesa redonda y un árbol vivo creciendo dentro del espacio" width="1800" height="1199" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
-    <img src="../../assets/img/proyectos/aguila-real-07.webp" alt="Terraza cubierta con columnas de acero inclinadas, fuego encendido y el bosque afuera" width="1800" height="1199" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
-    <img src="../../assets/img/proyectos/aguila-real-08.webp" alt="Sala de cine con butacas escalonadas y luz indirecta en el techo" width="1800" height="1199" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
-    <!-- Cierre de galería: el render con que se presentó el proyecto. Se conserva a
-         propósito, rotulado como render, para leerlo junto a las fotografías de la
-         casa terminada. No se presenta ni se describe nunca como fotografía. -->
-    <figure style="margin:0">
-      <img src="../../assets/img/proyectos/aguila-real-09.webp" alt="Render del proyecto: la fachada al anochecer, dibujada antes de construirse" width="1800" height="1013" loading="lazy" decoding="async" class="media-completa">
-      <figcaption class="rotulo rotulo--tenue" style="margin-top:12px">Render del proyecto, previo a la construcción</figcaption>
-    </figure>
+    <img src="../../assets/img/proyectos/aguila-real-02.webp" alt="Fotografía nocturna de la casa, con el volado de madera iluminado sobre la terraza" width="1800" height="1199" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
+    <img src="../../assets/img/proyectos/aguila-real-03.webp" alt="Fotografía nocturna desde el acceso, con los árboles del terreno y la casa al fondo" width="1800" height="1200" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
+    <img src="../../assets/img/proyectos/aguila-real-04.webp" alt="Vestíbulo de doble altura con escalera y muro de piedra, y la cava detrás del cristal" width="1800" height="1200" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
+    <img src="../../assets/img/proyectos/aguila-real-05.webp" alt="Comedor con mesa larga bajo un plafón de madera" width="1800" height="1199" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
+    <img src="../../assets/img/proyectos/aguila-real-06.webp" alt="Cava de vinos de piso a techo detrás de cristal, con la barra al fondo" width="1800" height="1199" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
+    <img src="../../assets/img/proyectos/aguila-real-07.webp" alt="Estancia con chimenea lineal, mesa redonda y un árbol vivo dentro del espacio" width="1800" height="1199" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
+    <img src="../../assets/img/proyectos/aguila-real-08.webp" alt="Terraza cubierta con columnas de acero inclinadas y el bosque afuera" width="1800" height="1199" loading="lazy" decoding="async" style="margin-bottom:24px" class="media-completa">
+    <img src="../../assets/img/proyectos/aguila-real-09.webp" alt="Sala de cine con butacas escalonadas y luz indirecta en el techo" width="1800" height="1199" loading="lazy" decoding="async" class="media-completa">
   </section>
 
   <!-- Texto de proyecto, opción A de Proyecto-content.md, ficha P-003, reescrito el
