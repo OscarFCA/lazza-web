@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/lazza.css">
 <link rel="icon" href="../assets/img/lazza-logo-white.png">
-<!-- CollectionPage con ItemList de los once proyectos. Sin contentLocation, sin fechas,
+<!-- CollectionPage con ItemList de los diecisiete proyectos. Sin contentLocation, sin fechas,
      sin superficie: se omiten por confidencialidad (Proyecto-content.md §5). -->
 <script type="application/ld+json">
 {
@@ -43,7 +43,13 @@
       { "@type": "ListItem", "position": 8, "item": { "@type": "CreativeWork", "name": "paseo de vallescondido v", "url": "https://lazza.com.mx/proyectos/paseo-de-vallescondido-v/" } },
       { "@type": "ListItem", "position": 9, "item": { "@type": "CreativeWork", "name": "paseos", "url": "https://lazza.com.mx/proyectos/paseos/" } },
       { "@type": "ListItem", "position": 10, "item": { "@type": "CreativeWork", "name": "vila sol", "url": "https://lazza.com.mx/proyectos/vila-sol/" } },
-      { "@type": "ListItem", "position": 11, "item": { "@type": "CreativeWork", "name": "vila punta", "url": "https://lazza.com.mx/proyectos/vila-punta/" } }
+      { "@type": "ListItem", "position": 11, "item": { "@type": "CreativeWork", "name": "vila punta", "url": "https://lazza.com.mx/proyectos/vila-punta/" } },
+      { "@type": "ListItem", "position": 12, "item": { "@type": "CreativeWork", "name": "vallescondido el parque", "url": "https://lazza.com.mx/proyectos/vallescondido-el-parque/" } },
+      { "@type": "ListItem", "position": 13, "item": { "@type": "CreativeWork", "name": "ph club de golf bosques", "url": "https://lazza.com.mx/proyectos/ph-club-de-golf-bosques/" } },
+      { "@type": "ListItem", "position": 14, "item": { "@type": "CreativeWork", "name": "av. del club", "url": "https://lazza.com.mx/proyectos/av-del-club/" } },
+      { "@type": "ListItem", "position": 15, "item": { "@type": "CreativeWork", "name": "cantil", "url": "https://lazza.com.mx/proyectos/cantil/" } },
+      { "@type": "ListItem", "position": 16, "item": { "@type": "CreativeWork", "name": "meseta", "url": "https://lazza.com.mx/proyectos/meseta/" } },
+      { "@type": "ListItem", "position": 17, "item": { "@type": "CreativeWork", "name": "mimbres", "url": "https://lazza.com.mx/proyectos/mimbres/" } }
     ]
   }
 }
@@ -69,27 +75,17 @@
 
 <main id="contenido">
 
-  <!-- 1. Hero con microcopy de encuadre. Resuelve el riesgo H2 del reporte Nielsen:
-       que "proyecto no construido" se lea como debilidad. El encuadre lo convierte
-       en la etapa donde vive la visión, el lugar del que salen todas las obras.
-       H1 y microcopy: opción A elegida de Proyectos-content.md §3. Las otras dos
-       opciones quedan comentadas abajo para que Jaime decida. -->
+  <!-- 1. Hero. Reescrito el 12 de agosto de 2026: el encuadre anterior ("la visión,
+       antes del muro") daba por hecho que ningún proyecto estaba construido, y desde la
+       unificación del portafolio seis de los diecisiete son casas terminadas y
+       fotografiadas. El microcopy nuevo cubre las dos etapas sin jerarquizarlas. -->
   <section class="hero-interior" aria-label="Presentación de los proyectos">
     <p class="rotulo rotulo--tenue">Proyectos</p>
-    <h1 class="h1">la visión, antes del muro</h1>
-    <p class="texto texto--grande" style="margin-top:20px">Todo lo construido empezó aquí: en el trazo. Estos proyectos son la etapa donde la visión toma forma, antes de volverse muros, luz y vida diaria.</p>
-    <!-- Opciones alternativas de H1, sin usar, para elección de Jaime:
-         Opción B: arquitectura en etapa de diseño
-         Opción C: donde empieza cada obra
-
-         Opciones alternativas de microcopy, sin usar:
-         Opción B: Un proyecto es una casa vista diez años antes de que exista: el
-         diseño ya resolvió cómo se va a vivir, aunque la obra todavía no empiece.
-         Opción C: Aquí vive el diseño: proyectos donde cada espacio ya está pensado
-         y resuelto. Lo que ya se construyó y se habita lo encuentras en obras. -->
+    <h1 class="h1">el trabajo del despacho</h1>
+    <p class="texto texto--grande" style="margin-top:20px">Casas ya construidas y fotografiadas, y casas todavía en trazo. Todas empezaron igual: con una conversación sobre cómo quieres vivir.</p>
   </section>
 
-  <!-- 2. Grid de los 11 proyectos. Tarjetas idénticas a las de Obras (foto 4:3 más
+  <!-- 2. Grid de los 17 proyectos. Tarjetas idénticas a las de Obras (foto 4:3 más
        tarjeta__pie). Orden del grid: se usa el orden del menú del sitio actual
        (tabla de Proyectos-content.md §3, "mientras se decide"), porque la sesión
        de orden por fuerza de imagen sigue [Pendiente] con Jaime.
@@ -103,7 +99,7 @@
        Jaime, igual que el resto del portafolio. -->
   <section class="seccion seccion--bg-primary" aria-labelledby="h-grid">
     <p class="rotulo">Portafolio</p>
-    <h2 class="h2" id="h-grid">once proyectos, once formas de vivir</h2>
+    <h2 class="h2" id="h-grid">diecisiete proyectos, diecisiete formas de vivir</h2>
     <div class="grid-2" style="margin-top:clamp(32px,5vw,44px)">
 
       <article>
@@ -227,17 +223,79 @@
         </a>
       </article>
 
+      <article>
+        <a class="tarjeta" href="vallescondido-el-parque/" data-analytics="proyecto_card_click" data-proyecto="vallescondido-el-parque">
+          <!-- Fotografía de la galería de obras del sitio actual del despacho. -->
+          <img class="tarjeta__media" src="../assets/img/proyectos/vallescondido-el-parque-01.webp" alt="La casa al anochecer, con las estancias encendidas detrás del ventanal" width="1600" height="1067" loading="lazy" decoding="async">
+          <span class="tarjeta__pie">
+            <span class="tarjeta__nombre">vallescondido el parque</span>
+            <span class="tarjeta__accion">ver el proyecto</span>
+          </span>
+        </a>
+      </article>
+
+      <article>
+        <a class="tarjeta" href="ph-club-de-golf-bosques/" data-analytics="proyecto_card_click" data-proyecto="ph-club-de-golf-bosques">
+          <!-- Fotografía de la galería de obras del sitio actual del despacho. -->
+          <img class="tarjeta__media" src="../assets/img/proyectos/ph-club-de-golf-bosques-01.webp" alt="Sala bajo el plafón artesonado, con dos sofás claros frente a la mesa de centro" width="1600" height="1067" loading="lazy" decoding="async">
+          <span class="tarjeta__pie">
+            <span class="tarjeta__nombre">ph club de golf bosques</span>
+            <span class="tarjeta__accion">ver el proyecto</span>
+          </span>
+        </a>
+      </article>
+
+      <article>
+        <a class="tarjeta" href="av-del-club/" data-analytics="proyecto_card_click" data-proyecto="av-del-club">
+          <!-- Fotografía de la galería de obras del sitio actual del despacho. -->
+          <img class="tarjeta__media" src="../assets/img/proyectos/av-del-club-01.webp" alt="Fachada de día: el volumen oscuro en voladizo sobre el jardín" width="1600" height="933" loading="lazy" decoding="async">
+          <span class="tarjeta__pie">
+            <span class="tarjeta__nombre">av. del club</span>
+            <span class="tarjeta__accion">ver el proyecto</span>
+          </span>
+        </a>
+      </article>
+
+      <article>
+        <a class="tarjeta" href="cantil/" data-analytics="proyecto_card_click" data-proyecto="cantil">
+          <!-- Fotografía de la galería de obras del sitio actual del despacho. -->
+          <img class="tarjeta__media" src="../assets/img/proyectos/cantil-01.webp" alt="Pasillo de acceso, con muros de madera y una pieza escultórica al fondo" width="1348" height="899" loading="lazy" decoding="async">
+          <span class="tarjeta__pie">
+            <span class="tarjeta__nombre">cantil</span>
+            <span class="tarjeta__accion">ver el proyecto</span>
+          </span>
+        </a>
+      </article>
+
+      <article>
+        <a class="tarjeta" href="meseta/" data-analytics="proyecto_card_click" data-proyecto="meseta">
+          <!-- Fotografía de la galería de obras del sitio actual del despacho. -->
+          <img class="tarjeta__media" src="../assets/img/proyectos/meseta-01.webp" alt="Fachada con una escultura oscura sobre el espejo de agua del acceso" width="1600" height="1169" loading="lazy" decoding="async">
+          <span class="tarjeta__pie">
+            <span class="tarjeta__nombre">meseta</span>
+            <span class="tarjeta__accion">ver el proyecto</span>
+          </span>
+        </a>
+      </article>
+
+      <article>
+        <a class="tarjeta" href="mimbres/" data-analytics="proyecto_card_click" data-proyecto="mimbres">
+          <!-- Fotografía de la galería de obras del sitio actual del despacho. -->
+          <img class="tarjeta__media" src="../assets/img/proyectos/mimbres-01.webp" alt="Fachada al anochecer, con los árboles del terreno iluminados desde el piso" width="1600" height="1067" loading="lazy" decoding="async">
+          <span class="tarjeta__pie">
+            <span class="tarjeta__nombre">mimbres</span>
+            <span class="tarjeta__accion">ver el proyecto</span>
+          </span>
+        </a>
+      </article>
+
     </div>
   </section>
 
-  <!-- 3. Puente a Obras. Opción A elegida de Proyectos-content.md §3.
-       Vuelve el 12 de agosto de 2026, con las seis obras de la galería del despacho. -->
-  <section class="seccion seccion--bg-secondary" aria-labelledby="h-puente">
-    <p class="rotulo rotulo--tenue">Obras</p>
-    <h2 class="h2 h2--menor" id="h-puente">lo que ya se construyó</h2>
-    <p class="texto" style="margin-bottom:28px">Cuando un proyecto se construye, cambia de página. Lo que ya se habita y se fotografió vive en obras.</p>
-    <a class="enlace" href="../obras/" data-analytics="puente_obras_click">ver las obras</a>
-  </section>
+  <!-- 3. El puente a Obras desaparece el 12 de agosto de 2026, junto con la sección.
+       Por decisión del cliente el portafolio se unifica: las seis casas fotografiadas
+       que estaban en /obras/ pasan a proyectos, con folios P-012 a P-017, y esta página
+       queda como la única entrada al trabajo del despacho. -->
 
   <!-- 4. Cierre con CTA. Opción A elegida de Proyectos-content.md §3. -->
   <section class="seccion seccion--amplia seccion--bg-primary" aria-labelledby="h-cierre" style="display:flex;flex-direction:column;align-items:center;text-align:center">
