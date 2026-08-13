@@ -63,6 +63,14 @@
   </nav>
 </header>
 
+<!-- DATO CORREGIDO, 12 de agosto de 2026. Jaime no publicó artículos
+     sueltos: fue COLUMNISTA del diario Excélsior, con columna propia. Es un
+     hecho de más peso y así se redacta en todo el sitio.
+     [Pendiente] los años. El diagnóstico interno decía cinco; el cliente cree
+     que fueron alrededor de diez y no tiene el dato duro. Con dos versiones en
+     conflicto y ninguna confirmada, la cifra NO se publica en ninguna
+     superficie hasta que Jaime la confirme. No reponer un número sin ese
+     dato. -->
 <main id="contenido">
 
   <!-- 1. Hero con formulario. Regla de la página: campo, casilla y botón caben
@@ -188,14 +196,20 @@
            el despacho, por definir con el responsable de producción. -->
       <ul class="registro" style="grid-template-columns:1fr;max-width:560px">
         <li><span class="registro__hecho">La voz detrás de la carta es la del despacho fundado en 1997 y dirigido por Jaime Lavín, arquitecto, diseñador de interiores y escultor</span></li>
-        <li><span class="registro__hecho">Escribir no es nuevo aquí: hay un archivo de 5 años de artículos publicados en Excélsior</span></li>
+        <li><span class="registro__hecho">Escribir no es nuevo aquí: Jaime fue columnista del diario Excélsior, con una columna propia sobre arquitectura, arte y diseño</span></li>
         <li><span class="registro__hecho">El oficio tiene reconocimiento público: mención honorífica en la IX Bienal Iberoamericana del CIDI, 2017, entre más de 700 proyectos participantes</span></li>
         <li><span class="registro__hecho">La formación cruza México e Italia, y el trabajo llega a portada: la edición 72 de México DESIGN, dedicada a espacios inteligentes, lleva diseño de Jaime</span></li>
       </ul>
     </div>
-    <div class="foto-pendiente foto-pendiente--profunda foto-pendiente--medio grid-partido__media" role="img" aria-label="Retrato de Jaime Lavín en un espacio diseñado por el despacho">
-      <span class="foto-pendiente__etiqueta">RETRATO · JAIME<br>en espacio diseñado por el despacho, nunca fondo neutro</span>
-    </div>
+    <!-- Retrato del archivo del despacho. Misma nota de marca que en Studio:
+         DesignLazza §10.9 pide a Jaime en un espacio diseñado y no sobre fondo
+         neutro; esta es una excepción consciente, retrato de estudio en una
+         página institucional. -->
+    <img class="media-completa--cubre grid-partido__media"
+         src="../assets/img/studio/jaime-retrato-manos.webp"
+         alt="Jaime Lavín riendo, con las manos abiertas, en un retrato en blanco y negro"
+         width="1800" height="1200"
+         loading="lazy" decoding="async">
   </section>
 
   <!-- 5. CTA final. El formulario vive una sola vez en la página: lazza.js
