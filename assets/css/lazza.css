@@ -1161,3 +1161,26 @@ textarea.campo__control { min-height: 120px; resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   .lectura__figura { transition: none; }
 }
+
+/* --------------------------------------------------------------------------
+   Banda de fondo fijo
+   La imagen se queda quieta y la página pasa por encima. No es una animación:
+   nada se mueve por sí solo, solo cambia lo que se ve por la ventana.
+   El alto es el mismo que tenía el marcador que sustituye, así que la sección
+   conserva su medida exacta.
+   En móvil y con prefers-reduced-motion el fondo se ancla al scroll normal:
+   iOS ignora background-attachment fixed y lo deja en un encuadre roto.
+   -------------------------------------------------------------------------- */
+
+.banda-fija {
+  min-height: clamp(320px, 42vw, 560px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--color-bg-surface);
+}
+
+@media (max-width: 900px), (prefers-reduced-motion: reduce) {
+  .banda-fija { background-attachment: scroll; }
+}

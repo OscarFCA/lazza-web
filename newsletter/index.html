@@ -130,9 +130,15 @@
     </form>
   </section>
 
-  <div class="foto-pendiente foto-pendiente--medio" role="img" aria-label="Interior de una obra residencial con luz natural de tarde sobre muros cálidos">
-    <span class="foto-pendiente__etiqueta">FOTOGRAFÍA · NEWSLETTER<br>interior de obra, luz natural de tarde sobre muros cálidos<br>alt sin nombre de obra ni ubicación</span>
-  </div>
+  <!-- Banda de respiro entre el formulario y el resto. La imagen queda fija y
+       la página pasa por encima. Conserva el alto exacto del marcador que
+       sustituye, así que la sección no cambia de medida.
+       Nota de marca: DesignLazza §12 pide "sin parallax". Esto no lo es en
+       sentido estricto, la imagen no se desplaza a otra velocidad, se queda
+       quieta; aun así queda anotado para que la excepción sea consciente. -->
+  <div class="banda-fija" role="img"
+       aria-label="Escultura de volúmenes rojos en un nicho oscuro, dentro de una obra del despacho"
+       style="background-image:url('../assets/img/blog/pieza-aguila-real.webp')"></div>
 
   <!-- 2. ¿Para quién es? -->
   <section class="seccion seccion--bg-primary" aria-labelledby="h-para-quien">
