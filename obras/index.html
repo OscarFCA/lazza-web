@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/lazza.css">
 <link rel="icon" href="../assets/img/lazza-logo-white.png">
-<!-- CollectionPage con ItemList de las ocho obras. Sin contentLocation, sin fechas,
+<!-- CollectionPage con ItemList de las seis obras. Sin contentLocation, sin fechas,
      sin superficie: se omiten por confidencialidad (Obra-content.md §5). -->
 <script type="application/ld+json">
 {
@@ -36,11 +36,9 @@
       { "@type": "ListItem", "position": 1, "item": { "@type": "CreativeWork", "name": "vallescondido el parque", "url": "https://lazza.com.mx/obras/vallescondido-el-parque/" } },
       { "@type": "ListItem", "position": 2, "item": { "@type": "CreativeWork", "name": "ph club de golf bosques", "url": "https://lazza.com.mx/obras/ph-club-de-golf-bosques/" } },
       { "@type": "ListItem", "position": 3, "item": { "@type": "CreativeWork", "name": "av. del club", "url": "https://lazza.com.mx/obras/av-del-club/" } },
-      { "@type": "ListItem", "position": 4, "item": { "@type": "CreativeWork", "name": "ph altezza", "url": "https://lazza.com.mx/obras/ph-altezza/" } },
-      { "@type": "ListItem", "position": 5, "item": { "@type": "CreativeWork", "name": "cantil", "url": "https://lazza.com.mx/obras/cantil/" } },
-      { "@type": "ListItem", "position": 6, "item": { "@type": "CreativeWork", "name": "palma del río", "url": "https://lazza.com.mx/obras/palma-del-rio/" } },
-      { "@type": "ListItem", "position": 7, "item": { "@type": "CreativeWork", "name": "meseta", "url": "https://lazza.com.mx/obras/meseta/" } },
-      { "@type": "ListItem", "position": 8, "item": { "@type": "CreativeWork", "name": "mimbres", "url": "https://lazza.com.mx/obras/mimbres/" } }
+      { "@type": "ListItem", "position": 4, "item": { "@type": "CreativeWork", "name": "cantil", "url": "https://lazza.com.mx/obras/cantil/" } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "CreativeWork", "name": "meseta", "url": "https://lazza.com.mx/obras/meseta/" } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "CreativeWork", "name": "mimbres", "url": "https://lazza.com.mx/obras/mimbres/" } }
     ]
   }
 }
@@ -56,6 +54,7 @@
   </a>
   <nav class="nav" data-nav aria-label="Principal">
     <button class="nav__boton-menu" data-nav-boton type="button" aria-expanded="false">Menú</button>
+    <a class="nav__enlace" href="./" aria-current="page">Obras</a>
     <a class="nav__enlace" href="../proyectos/">Proyectos</a>
     <a class="nav__enlace" href="../studio/">Studio</a>
     <a class="nav__enlace" href="../blog/">Blog</a>
@@ -96,16 +95,79 @@
        (tabla de Obras-content.md §3, "mientras se decide"), porque el orden
        "recomendado, actualizado" que abre con mimbres y meseta sigue
        [Pendiente] de una sesión de validación con Jaime. -->
-  <!-- GRID EN ESPERA, 12 de agosto de 2026.
-       Las ocho obras anteriores (vallescondido el parque, ph club de golf
-       bosques, av. del club, ph altezza, cantil, palma del río, meseta y
-       mimbres) se retiraron por decisión del cliente: el portafolio queda con
-       la lista de once que él definió, y de esa lista todavía falta saber
-       cuáles están construidas. Las construidas viven aquí; las demás siguen
-       en proyectos.
-       Mientras tanto esta página no publica grid, porque una sección vacía
-       dice que el despacho no tiene obra, que es lo contrario de la verdad.
-       Obras también sale del menú hasta que tenga contenido. -->
+  <!-- Las seis obras que el despacho publica hoy en la galería de obras de su sitio
+       actual, con sus fotografías y en su mismo orden de portada. Sin sello ni mención de
+       premio: los reconocimientos de meseta y mimbres siguen bloqueados en nivel B
+       (Criterios §5.2) hasta que Jaime defina la política de coautoría.
+       [Pendiente] Ph altezza y palma del río también son obra publicada del despacho, pero
+       no están en esa galería, así que no entran aquí. -->
+  <section class="seccion seccion--bg-primary" aria-labelledby="h-grid">
+    <p class="rotulo">Portafolio</p>
+    <h2 class="h2" id="h-grid">seis obras, seis formas de habitar</h2>
+    <div class="grid-2" style="margin-top:clamp(32px,5vw,44px)">
+
+      <article>
+        <a class="tarjeta" href="vallescondido-el-parque/" data-analytics="obra_card_click" data-obra="vallescondido-el-parque">
+          <img class="tarjeta__media" src="../assets/img/obras/vallescondido-el-parque-01.webp" alt="La casa al anochecer, con las estancias encendidas detrás del ventanal" width="1600" height="1067" loading="lazy" decoding="async">
+          <span class="tarjeta__pie">
+            <span class="tarjeta__nombre">vallescondido el parque</span>
+            <span class="tarjeta__accion">ver la obra</span>
+          </span>
+        </a>
+      </article>
+
+      <article>
+        <a class="tarjeta" href="ph-club-de-golf-bosques/" data-analytics="obra_card_click" data-obra="ph-club-de-golf-bosques">
+          <img class="tarjeta__media" src="../assets/img/obras/ph-club-de-golf-bosques-01.webp" alt="Sala bajo el plafón artesonado, con dos sofás claros frente a la mesa de centro" width="1600" height="1067" loading="lazy" decoding="async">
+          <span class="tarjeta__pie">
+            <span class="tarjeta__nombre">ph club de golf bosques</span>
+            <span class="tarjeta__accion">ver la obra</span>
+          </span>
+        </a>
+      </article>
+
+      <article>
+        <a class="tarjeta" href="av-del-club/" data-analytics="obra_card_click" data-obra="av-del-club">
+          <img class="tarjeta__media" src="../assets/img/obras/av-del-club-01.webp" alt="Fachada de día: el volumen oscuro en voladizo sobre el jardín" width="1600" height="933" loading="lazy" decoding="async">
+          <span class="tarjeta__pie">
+            <span class="tarjeta__nombre">av. del club</span>
+            <span class="tarjeta__accion">ver la obra</span>
+          </span>
+        </a>
+      </article>
+
+      <article>
+        <a class="tarjeta" href="cantil/" data-analytics="obra_card_click" data-obra="cantil">
+          <img class="tarjeta__media" src="../assets/img/obras/cantil-01.webp" alt="Pasillo de acceso, con muros de madera y una pieza escultórica al fondo" width="1348" height="899" loading="lazy" decoding="async">
+          <span class="tarjeta__pie">
+            <span class="tarjeta__nombre">cantil</span>
+            <span class="tarjeta__accion">ver la obra</span>
+          </span>
+        </a>
+      </article>
+
+      <article>
+        <a class="tarjeta" href="meseta/" data-analytics="obra_card_click" data-obra="meseta">
+          <img class="tarjeta__media" src="../assets/img/obras/meseta-01.webp" alt="Fachada con una escultura oscura sobre el espejo de agua del acceso" width="1600" height="1169" loading="lazy" decoding="async">
+          <span class="tarjeta__pie">
+            <span class="tarjeta__nombre">meseta</span>
+            <span class="tarjeta__accion">ver la obra</span>
+          </span>
+        </a>
+      </article>
+
+      <article>
+        <a class="tarjeta" href="mimbres/" data-analytics="obra_card_click" data-obra="mimbres">
+          <img class="tarjeta__media" src="../assets/img/obras/mimbres-01.webp" alt="Fachada al anochecer, con los árboles del terreno iluminados desde el piso" width="1600" height="1067" loading="lazy" decoding="async">
+          <span class="tarjeta__pie">
+            <span class="tarjeta__nombre">mimbres</span>
+            <span class="tarjeta__accion">ver la obra</span>
+          </span>
+        </a>
+      </article>
+
+    </div>
+  </section>
 
 
   <!-- 3. Puente a Proyectos. Opción A elegida de Obras-content.md §3. -->
