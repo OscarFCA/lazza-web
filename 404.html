@@ -19,7 +19,7 @@
      Todo el resto del sitio usa rutas relativas. Esta página no puede:
      vive en la raíz del repositorio, pero GitHub Pages la sirve como
      respuesta a CUALQUIER URL inexistente, incluidas rutas profundas como
-     /lazza-web/proyectos/algo-que-no-existe/. Con rutas relativas, el navegador
+     /lazza-web/obras/algo-que-no-existe/. Con rutas relativas, el navegador
      resolvería "assets/css/lazza.css" contra esa ruta profunda y la hoja de
      estilos, el logotipo y los enlaces de salida romperían justo en el
      momento de mayor fricción del visitante.
@@ -56,6 +56,7 @@
   </a>
   <nav class="nav" data-nav aria-label="Principal">
     <button class="nav__boton-menu" data-nav-boton type="button" aria-expanded="false">Menú</button>
+    <a class="nav__enlace" href="/lazza-web/obras/">Obras</a>
     <a class="nav__enlace" href="/lazza-web/proyectos/">Proyectos</a>
     <a class="nav__enlace" href="/lazza-web/studio/">Studio</a>
     <a class="nav__enlace" href="/lazza-web/blog/">Blog</a>
@@ -90,14 +91,14 @@
     <!-- [Pendiente] El evento view_404, con page_location y page_referrer, se
          configura en GA4: lazza.js solo mide clics con data-analytics. -->
     <div style="margin-top:28px">
-      <a class="btn btn--secundario" href="/lazza-web/proyectos/" data-analytics="click_404_exit">Ver los proyectos</a>
+      <a class="btn btn--secundario" href="/lazza-web/obras/" data-analytics="click_404_exit">Ver las obras</a>
     </div>
     <div class="fila-botones" style="margin-top:32px">
       <a class="enlace" href="/lazza-web/studio/" data-analytics="click_404_exit">Conocer el studio</a>
       <a class="enlace" href="/lazza-web/blog/" data-analytics="click_404_exit">Leer el blog</a>
       <a class="enlace" href="/lazza-web/contacto/" data-analytics="click_404_exit">Escríbenos</a>
     </div>
-    <!-- Textos de salida, opción B descartada: los proyectos, el studio, el blog, ir a contacto. -->
+    <!-- Textos de salida, opción B descartada: las obras, el studio, el blog, ir a contacto. -->
   </section>
 
 </main>
@@ -109,6 +110,7 @@
   <div class="pie__columnas">
     <nav class="pie__columna" aria-label="Sitio">
       <span class="pie__titulo">Sitio</span>
+      <a class="pie__enlace" href="/lazza-web/obras/">Obras</a>
       <a class="pie__enlace" href="/lazza-web/proyectos/">Proyectos</a>
       <a class="pie__enlace" href="/lazza-web/studio/">Studio</a>
     </nav>
