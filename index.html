@@ -115,51 +115,99 @@
     </div>
   </section>
 
-  <!-- 2. Portafolio.
-       Rediseñada el 12 de agosto de 2026: la versión anterior tenía una sola
-       tarjeta y dejaba media pantalla vacía. Ahora la sección enseña obra, que
-       es lo que el visitante vino a ver, y el enlace de abajo lleva al resto.
-       Cuando se sepa cuáles de los once están construidos, esta sección
-       recupera la dupla obras y proyectos con el microcopy que explica la
-       diferencia entre lo construido y lo diseñado, que es el riesgo H2 del
-       reporte Nielsen. -->
+  <!-- 2. Obras y proyectos.
+       Historia de esta sección: el 12 de agosto de 2026 se rediseñó para enseñar
+       tres tarjetas, y con el portafolio unificado las tres acabaron siendo
+       renders de proyectos. Ahora vuelve a la dupla que pedía Home-content.md
+       §3.2: cada mitad con su propio nombre, sus propias tarjetas y su propio
+       enlace, para que el visitante asocie la palabra del menú con lo que ve.
+       Esto es el riesgo H2 del reporte Nielsen y el microcopy que lo resuelve
+       sigue [Pendiente] de aprobación de Jaime.
+       El texto usa la opción B de §3.2 sin su frase de cierre: la auditoría de
+       tono del 12 de agosto retiró los aforismos de remate en todo el sitio.
+       Las tarjetas de obra no incluyen mimbres: es la obra destacada de la
+       sección siguiente y repetirla gastaría dos huecos en la misma casa. -->
   <section class="seccion seccion--bg-primary" aria-labelledby="h-portafolio">
     <p class="rotulo">Portafolio</p>
-    <h2 class="h2" id="h-portafolio">el trabajo del despacho</h2>
-    <p class="texto">Casas, departamentos y espacios diseñados desde la vida de quien los habita. Entra a verlos con calma.</p>
-    <div class="grid-2" style="margin-top:clamp(32px,5vw,44px)">
-      <article>
-        <a class="tarjeta" href="proyectos/vila-sol/" data-analytics="portafolio_card_click" data-proyecto="vila-sol">
-          <img class="tarjeta__media" src="assets/img/proyectos/vila-sol-01.webp" alt="Render de una casa al anochecer, con el volado de madera sobre el acceso" width="1800" height="1350" loading="lazy" decoding="async">
-          <span class="tarjeta__pie">
-            <span class="tarjeta__nombre">vila sol</span>
-            <span class="tarjeta__accion">Ver el proyecto</span>
-          </span>
-        </a>
-      </article>
-      <article>
-        <a class="tarjeta" href="proyectos/bejar/" data-analytics="portafolio_card_click" data-proyecto="bejar">
-          <img class="tarjeta__media" src="assets/img/proyectos/bejar-01.webp" alt="Render de una casa de volumen curvo con los interiores iluminados" width="1800" height="1012" loading="lazy" decoding="async">
-          <span class="tarjeta__pie">
-            <span class="tarjeta__nombre">bejar</span>
-            <span class="tarjeta__accion">Ver el proyecto</span>
-          </span>
-        </a>
-      </article>
-      <article>
-        <a class="tarjeta" href="proyectos/paseos/" data-analytics="portafolio_card_click" data-proyecto="paseos">
-          <img class="tarjeta__media" src="assets/img/proyectos/paseos-01.webp" alt="Render de la fachada de una casa con celosía vertical y cochera cubierta" width="1800" height="1012" loading="lazy" decoding="async">
-          <span class="tarjeta__pie">
-            <span class="tarjeta__nombre">paseos</span>
-            <span class="tarjeta__accion">Ver el proyecto</span>
-          </span>
-        </a>
-      </article>
+    <h2 class="h2" id="h-portafolio">lo construido y lo diseñado</h2>
+    <p class="texto">Una obra es lo que ya se construyó: espacios terminados, habitados y fotografiados. Un proyecto es lo que ya se diseñó y todavía no se levanta. Entra a verlos con calma.</p>
+
+    <!-- Mitad 1: obras. Fotografía de obra terminada, de la galería del despacho. -->
+    <div style="margin-top:clamp(40px,5vw,60px)">
+      <h3 class="h3" id="h-portafolio-obras">obras</h3>
+      <div class="grid-2" style="margin-top:clamp(20px,3vw,28px)">
+        <article>
+          <a class="tarjeta" href="obras/vallescondido-el-parque/" data-analytics="portafolio_card_click" data-obra="vallescondido-el-parque">
+            <img class="tarjeta__media" src="assets/img/obras/vallescondido-el-parque-01.webp" alt="La casa al anochecer, con las estancias encendidas detrás del ventanal" width="1600" height="1067" loading="lazy" decoding="async">
+            <span class="tarjeta__pie">
+              <span class="tarjeta__nombre">vallescondido el parque</span>
+              <span class="tarjeta__accion">Ver la obra</span>
+            </span>
+          </a>
+        </article>
+        <article>
+          <a class="tarjeta" href="obras/av-del-club/" data-analytics="portafolio_card_click" data-obra="av-del-club">
+            <img class="tarjeta__media" src="assets/img/obras/av-del-club-01.webp" alt="Fachada de día: el volumen oscuro en voladizo sobre el jardín" width="1600" height="933" loading="lazy" decoding="async">
+            <span class="tarjeta__pie">
+              <span class="tarjeta__nombre">av. del club</span>
+              <span class="tarjeta__accion">Ver la obra</span>
+            </span>
+          </a>
+        </article>
+        <article>
+          <a class="tarjeta" href="obras/meseta/" data-analytics="portafolio_card_click" data-obra="meseta">
+            <img class="tarjeta__media" src="assets/img/obras/meseta-01.webp" alt="Fachada con una escultura oscura sobre el espejo de agua del acceso" width="1600" height="1169" loading="lazy" decoding="async">
+            <span class="tarjeta__pie">
+              <span class="tarjeta__nombre">meseta</span>
+              <span class="tarjeta__accion">Ver la obra</span>
+            </span>
+          </a>
+        </article>
+      </div>
+      <p style="margin-top:clamp(22px,3vw,30px)">
+        <a class="enlace" href="obras/" data-analytics="obras_link_click">Ver todas las obras</a>
+      </p>
     </div>
-    <p style="margin-top:clamp(28px,4vw,40px);display:flex;flex-wrap:wrap;gap:14px 36px">
-      <a class="enlace" href="obras/" data-analytics="obras_link_click">Ver las obras construidas</a>
-      <a class="enlace" href="proyectos/" data-analytics="proyectos_link_click">Ver los proyectos en diseño</a>
-    </p>
+
+    <hr style="margin:clamp(40px,5vw,60px) 0 0">
+
+    <!-- Mitad 2: proyectos. Render, no fotografía: son las tres tarjetas que ya
+         vivían aquí, con sus portadas oficiales. -->
+    <div style="margin-top:clamp(40px,5vw,60px)">
+      <h3 class="h3" id="h-portafolio-proyectos">proyectos</h3>
+      <div class="grid-2" style="margin-top:clamp(20px,3vw,28px)">
+        <article>
+          <a class="tarjeta" href="proyectos/vila-sol/" data-analytics="portafolio_card_click" data-proyecto="vila-sol">
+            <img class="tarjeta__media" src="assets/img/proyectos/vila-sol-01.webp" alt="Render de una casa al anochecer, con el volado de madera sobre el acceso" width="1800" height="1350" loading="lazy" decoding="async">
+            <span class="tarjeta__pie">
+              <span class="tarjeta__nombre">vila sol</span>
+              <span class="tarjeta__accion">Ver el proyecto</span>
+            </span>
+          </a>
+        </article>
+        <article>
+          <a class="tarjeta" href="proyectos/bejar/" data-analytics="portafolio_card_click" data-proyecto="bejar">
+            <img class="tarjeta__media" src="assets/img/proyectos/bejar-01.webp" alt="Render de una casa de volumen curvo con los interiores iluminados" width="1800" height="1012" loading="lazy" decoding="async">
+            <span class="tarjeta__pie">
+              <span class="tarjeta__nombre">bejar</span>
+              <span class="tarjeta__accion">Ver el proyecto</span>
+            </span>
+          </a>
+        </article>
+        <article>
+          <a class="tarjeta" href="proyectos/paseos/" data-analytics="portafolio_card_click" data-proyecto="paseos">
+            <img class="tarjeta__media" src="assets/img/proyectos/paseos-01.webp" alt="Render de la fachada de una casa con celosía vertical y cochera cubierta" width="1800" height="1012" loading="lazy" decoding="async">
+            <span class="tarjeta__pie">
+              <span class="tarjeta__nombre">paseos</span>
+              <span class="tarjeta__accion">Ver el proyecto</span>
+            </span>
+          </a>
+        </article>
+      </div>
+      <p style="margin-top:clamp(22px,3vw,30px)">
+        <a class="enlace" href="proyectos/" data-analytics="proyectos_link_click">Ver todos los proyectos</a>
+      </p>
+    </div>
   </section>
 
   <!-- 3. Obra destacada. Con las dos secciones separadas de nuevo, esta sección vuelve
