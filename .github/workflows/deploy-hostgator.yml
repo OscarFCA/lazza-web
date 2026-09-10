@@ -1,0 +1,44 @@
+name: Deploy a HostGator (FTP)
+
+# Cada push a main publica el sitio en HostGator por FTP, en ~1 min.
+# Decisión de Elías (10-sep-2026): main va directo a producción, sin rama
+# intermedia. GitHub Pages sigue activo en paralelo como respaldo.
+#
+# Requiere 5 secrets en el repo: FTP_HOST, FTP_USER, FTP_PASS, FTP_PORT,
+# FTP_TARGET_DIR. La cuenta FTP debe estar creada en cPanel con
+# Directory = el docroot real del sitio, o sube pero no publica.
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: ftp-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Desplegar por FTP a HostGator
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          port: ${{ secrets.FTP_PORT }}
+          server-dir: ${{ secrets.FTP_TARGET_DIR }}
+          protocol: ftp
+          # Solo se sube el sitio. .nojekyll solo le sirve a GitHub Pages,
+          # pero pesa nada y no estorba en Apache, así que se queda.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            **/.DS_Store
+            README.md

@@ -1,0 +1,80 @@
+# Lazza Arquitectura — configuración de Apache en HostGator
+#
+# Este archivo solo actúa en el hosting. GitHub Pages lo ignora.
+# Escrito el 10-sep-2026, al mover el sitio de Pages a HostGator.
+
+# ---------------------------------------------------------------------------
+# Página de error propia
+# ---------------------------------------------------------------------------
+ErrorDocument 404 /404.html
+
+# ---------------------------------------------------------------------------
+# Canonicalización de dominio
+#
+# Los canonical de las 34 páginas ya apuntan a https://lazza.com.mx/ sin www,
+# así que el servidor manda www → raíz para que no existan dos URLs del mismo
+# contenido.
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{HTTP_HOST} ^www\.lazza\.com\.mx$ [NC]
+  RewriteRule ^(.*)$ https://lazza.com.mx/$1 [R=301,L]
+
+  # ---------------------------------------------------------------------------
+  # FORZAR HTTPS — DESACTIVADO A PROPÓSITO.
+  #
+  # Descomentar SOLO cuando AutoSSL ya haya emitido el certificado de
+  # lazza.com.mx en cPanel. Activarlo antes deja el sitio inaccesible:
+  # redirige a un https que todavía no tiene certificado válido.
+  #
+  # RewriteCond %{HTTPS} !=on
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+  # ---------------------------------------------------------------------------
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Compresión
+# ---------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Caché
+#
+# El sitio son 19 MB de fotografía y un video de hero: cachearlos fuerte es
+# la diferencia entre una segunda visita instantánea y una lenta. El HTML se
+# revalida siempre, para que un deploy se vea de inmediato.
+# ---------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg              "access plus 1 year"
+  ExpiresByType image/png               "access plus 1 year"
+  ExpiresByType image/webp              "access plus 1 year"
+  ExpiresByType image/svg+xml           "access plus 1 year"
+  ExpiresByType video/mp4               "access plus 1 year"
+  ExpiresByType text/css                "access plus 1 month"
+  ExpiresByType application/javascript  "access plus 1 month"
+  ExpiresByType font/woff2              "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # Encabezados de seguridad básicos
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# No servir archivos de trabajo si alguna vez llegaran al servidor
+# ---------------------------------------------------------------------------
+<FilesMatch "^(\.|README|.*\.md$)">
+  Require all denied
+</FilesMatch>
