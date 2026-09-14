@@ -1184,3 +1184,81 @@ textarea.campo__control { min-height: 120px; resize: vertical; }
 @media (max-width: 900px), (prefers-reduced-motion: reduce) {
   .banda-fija { background-attachment: scroll; }
 }
+
+/* --------------------------------------------------------------------------
+   Contacto directo por WhatsApp
+   Añadido el 14-sep-2026 a petición de Elías. Número 55 4615 1819.
+
+   El botón de WhatsApp de fábrica —círculo verde con sombra— contradice dos
+   reglas del sistema: border-radius 0 y cero box-shadow. Este se construye con
+   el vocabulario de la marca: rectángulo, superficie oscura, línea hairline y
+   el acento solo al pasar el cursor, para no gastar el único acento que §3
+   permite por superficie.
+
+   z-index 40 a propósito: por debajo del menú móvil (50) y del visor de
+   imágenes (200), que lo cubren cuando están abiertos, y por encima del resto.
+   -------------------------------------------------------------------------- */
+
+.wa {
+  position: fixed;
+  right: clamp(16px, 4vw, 32px);
+  bottom: clamp(16px, 4vw, 32px);
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  height: 52px;
+  padding: 0 14px;
+  background: var(--color-bg-surface);
+  border: var(--line-hairline);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-base), border-color var(--transition-base);
+}
+
+.wa:hover,
+.wa:focus-visible {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.wa:focus-visible { outline: 1px solid var(--color-accent); outline-offset: 3px; }
+
+.wa__icono {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex: none;
+  fill: currentColor;
+}
+
+/* La palabra se despliega al acercarse; en reposo el botón es solo el glifo */
+.wa__texto {
+  font: 500 12px/1 var(--font-body);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  max-width: 0;
+  margin-left: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-width var(--transition-base), margin-left var(--transition-base), opacity var(--transition-base);
+}
+
+.wa:hover .wa__texto,
+.wa:focus-visible .wa__texto {
+  max-width: 120px;
+  margin-left: 12px;
+  opacity: 1;
+}
+
+/* En táctil no hay hover: el botón se queda en glifo, cuadrado */
+@media (hover: none) {
+  .wa { padding: 0; width: 52px; }
+  .wa__texto { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa, .wa__texto { transition: none; }
+}
