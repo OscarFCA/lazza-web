@@ -102,19 +102,29 @@
   <!-- 2. Formulario. Conversión única del sitio: campos mínimos, cada uno
        justificado en Contacto-content.md §3.2.
 
-       [Pendiente] destino técnico del formulario. El action y el method de
-       abajo son marcador, no destino real: el envío no se conecta hasta que
-       exista el correo de dominio propio operando, condición dura declarada
-       en Contacto-content.md §7. Mientras tanto la página no recibe tráfico.
-       Al conectar la herramienta de envío hay que definir también dónde se
-       almacena el consentimiento con fecha, origen y texto aceptado.
+       DESTINO RESUELTO el 14-sep-2026: el formulario entrega por WhatsApp al
+       55 4615 1819. Sustituye al marcador que hacía POST a ../gracias/, que
+       respondía 200 y perdía el mensaje en silencio. Decisión de Elías: no
+       esperar al correo de dominio propio (la condición dura de
+       Contacto-content.md §7) porque dejaba la única página de conversión sin
+       entregar nada.
+
+       Cómo funciona: lazza.js valida, arma el mensaje con los campos y abre la
+       conversación. Sin JS el navegador sigue el action y abre el chat sin
+       texto; el mensaje llega igual, solo que lo escribe la persona.
+
+       El consentimiento de la carta viaja dentro del mensaje con su texto
+       exacto, así que el chat queda como registro con fecha y origen. Al
+       conectar algún día una herramienta de envío, revisar si ese registro
+       basta o hace falta almacenarlo aparte.
 
        El evento form_start (primer foco en cualquier campo) todavía no está
        implementado: lazza.js mide form_submit y form_error. Se agrega cuando
        GA4 esté configurado. -->
   <section class="seccion seccion--bg-secondary" aria-labelledby="h-formulario">
     <h2 class="visualmente-oculto" id="h-formulario">Formulario de contacto</h2>
-    <form class="form" data-form action="../gracias/" method="post">
+    <form class="form" data-form data-wa="525546151819"
+          action="https://wa.me/525546151819" method="get">
 
       <div class="campo">
         <label class="campo__etiqueta" for="nombre">NOMBRE</label>
@@ -173,6 +183,15 @@
       <button class="btn btn--primario" type="submit" data-analytics="cta_contacto_submit">Agenda una primera conversación</button>
       <!-- Opción B del botón: Empecemos la conversación -->
       <!-- Opción C del botón: Quiero esa conversación -->
+
+      <!-- Se avisa antes de pulsar, no después: que se abra otra aplicación sin
+           anunciarlo se siente como un error del sitio. -->
+      <p class="nota" style="margin-top:20px">Al enviar se abre WhatsApp con tu mensaje escrito, listo para que lo revises.</p>
+
+      <!-- Estado posterior al envío. No dice "gracias" ni "recibimos tu
+           mensaje": hasta que la persona le dé enviar dentro de WhatsApp, el
+           despacho no ha recibido nada. -->
+      <p class="nota" data-form-estado tabindex="-1" role="status" hidden style="margin-top:16px">Abrimos WhatsApp con tu mensaje. Si no se abrió, escríbenos al <a class="enlace enlace--tenue" href="https://wa.me/525546151819" target="_blank" rel="noopener">55 4615 1819</a>.</p>
 
       <p class="nota" style="margin-top:20px">Al enviar aceptas el <a class="enlace enlace--tenue" href="../aviso-de-privacidad/">aviso de privacidad</a>. Usamos tus datos solo para responderte.</p>
       <!-- Línea de privacidad, opción B: Tus datos se usan solo para atender tu
