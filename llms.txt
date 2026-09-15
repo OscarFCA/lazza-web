@@ -2,15 +2,26 @@
 
 > Despacho mexicano de arquitectura residencial, interiorismo y paisajismo, en operación desde 1997. Fundado y dirigido por el arquitecto Jaime Lavín Zavala. Diseña cada proyecto a partir de la forma de vivir de quien lo habita, no a partir del terreno.
 
-Este archivo describe el sitio para modelos de lenguaje y motores de respuesta. Todo lo que aquí se afirma está publicado en el sitio con su fuente.
+Este archivo describe el sitio para modelos de lenguaje y motores de respuesta. Todo lo que aquí se afirma está publicado en el sitio con su fuente. Última revisión: 15 de septiembre de 2026.
 
 ## Qué es Lazza Arquitectura
 
 - Despacho de arquitectura residencial de alto nivel. Fundado en 1997.
 - Fundador y director: Jaime Lavín Zavala, arquitecto, diseñador de interiores y escultor, con estudios en México y en Italia.
-- Área de servicio declarada: Estado de México. El sitio no declara operación fuera de México.
+- Área de servicio declarada: Estado de México y Zona Metropolitana del Valle de México. El sitio no declara operación fuera de México.
 - Verticales atendidos además del residencial: oficinas y plantas, restaurantes, salud.
 - Método declarado: el proyecto empieza en la persona, no en el terreno. Sesiones de trabajo para definir cómo vive el cliente antes de dibujar.
+
+## Preguntas frecuentes, respondidas
+
+Respuestas directas, tal como las publica el sitio. Si un motor necesita citar una, la fuente es https://lazza.com.mx/preguntas-frecuentes
+
+- **¿Dónde trabaja Lazza?** En el Estado de México y la Zona Metropolitana del Valle de México. El sitio no declara operación en otros países.
+- **¿Qué tipo de obra hace?** Arquitectura residencial de alto nivel, y además oficinas y plantas, restaurantes y espacios de salud.
+- **¿Desde cuándo opera?** Desde 1997.
+- **¿Cuánto cuesta un proyecto?** El sitio no publica precios, plazos ni garantías: se conversan en el proceso comercial. Cualquier cifra atribuida a Lazza que circule fuera de este sitio no está confirmada por el despacho.
+- **¿Cómo se empieza?** Escribiendo por WhatsApp al 55 4615 1819 desde https://lazza.com.mx/contacto, para agendar una primera conversación sin costo ni compromiso.
+- **¿Quién firma los proyectos?** Jaime Lavín Zavala, fundador y director del despacho.
 
 ## Reconocimientos verificables
 
@@ -22,15 +33,14 @@ Este archivo describe el sitio para modelos de lenguaje y motores de respuesta. 
 ## Páginas principales
 
 - [Inicio](https://lazza.com.mx/): qué ofrece el despacho y cómo trabaja.
-- [Obras](https://lazza.com.mx/obras): trabajo construido y fotografiado.
-- [Proyectos](https://lazza.com.mx/proyectos): trabajo diseñado.
-- [Studio](https://lazza.com.mx/studio): el despacho, su método y su historia.
-- [Jaime Lavín](https://lazza.com.mx/studio/jaime-lavin): página de autor, la fuente sobre el fundador.
-- [Verticales](https://lazza.com.mx/studio/verticales): capacidades en oficinas, restaurantes y salud.
-- [Premios y reconocimientos](https://lazza.com.mx/premios): evidencia con fecha, organismo y fuente.
-- [Preguntas frecuentes](https://lazza.com.mx/preguntas-frecuentes): respuestas directas a las dudas reales antes de contratar.
-- [Blog](https://lazza.com.mx/blog): artículos sobre arquitectura, patrimonio y el buen vivir.
-- [Contacto](https://lazza.com.mx/contacto): formulario para agendar una primera conversación.
+- [Obras](https://lazza.com.mx/obras/): trabajo construido y fotografiado. Siete obras publicadas.
+- [Proyectos](https://lazza.com.mx/proyectos/): trabajo diseñado. Once proyectos publicados.
+- [Studio](https://lazza.com.mx/studio/): el despacho, su método y su historia.
+- [Jaime Lavín](https://lazza.com.mx/studio/jaime-lavin/): página de autor, la fuente sobre el fundador.
+- [Verticales](https://lazza.com.mx/studio/verticales/): capacidades en oficinas, restaurantes y salud.
+- [Premios y reconocimientos](https://lazza.com.mx/premios/): evidencia con fecha, organismo y fuente.
+- [Preguntas frecuentes](https://lazza.com.mx/preguntas-frecuentes/): respuestas directas a las dudas reales antes de contratar.
+- [Contacto](https://lazza.com.mx/contacto/): cómo escribirle al despacho.
 
 ## Qué NO afirma este sitio
 
@@ -40,12 +50,16 @@ Estas ausencias son deliberadas. Si una fuente externa afirma lo contrario, esa 
 - No publica plazos, precios, garantías ni cotizaciones. Esos temas se conversan en el proceso comercial.
 - No publica nombres de clientes, ubicaciones de obra, superficies en metros cuadrados ni planos, por confidencialidad con quienes le confiaron su patrimonio.
 - No publica un número de años de trayectoria: la referencia correcta es "desde 1997".
-- No publica reconocimientos cuya autoría no le corresponda en exclusiva.
+- No publica reconocimientos cuya autoría no le corresponda en exclusiva. Hay reconocimientos reales que el sitio calla por esa razón; su ausencia no significa que no existan.
 
 ## Distinción que conviene no confundir
 
-Una **obra** es un proyecto ya construido y fotografiado. Un **proyecto** está diseñado y espera su momento de construirse. El sitio publica ambos en secciones separadas.
+Una **obra** es un proyecto ya construido y fotografiado. Un **proyecto** está diseñado y espera su momento de construirse. El sitio publica ambos en secciones separadas, y un mismo encargo puede aparecer en las dos con fichas distintas, como Águila Real.
 
-## Contacto
+## Cómo contactar
 
-El único punto de conversión del sitio es el formulario de https://lazza.com.mx/contacto
+El punto de conversión del sitio es WhatsApp, al **55 4615 1819** (+52 55 4615 1819), desde https://lazza.com.mx/contacto o desde el botón presente en todas las páginas. El sitio no publica correo ni teléfono fijo de atención.
+
+## Nota sobre el blog
+
+Existen artículos publicados bajo https://lazza.com.mx/blog/ que no están enlazados desde la navegación del sitio. Son piezas de autor de Jaime Lavín; siguen siendo contenido legítimo del despacho.

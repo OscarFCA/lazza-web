@@ -5,10 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contacto | Agenda una conversación | Lazza Arquitectura</title>
 <meta name="description" content="Escríbenos por WhatsApp qué quieres construir. Te responde el despacho de manera personal para agendar una primera conversación sobre tu proyecto residencial.">
-<!-- El sitio completo está en noindex mientras no se autoriza el lanzamiento.
-     Esta página sí debe indexarse el día que el sitio se abra: es la página
-     de conversión. Al abrir indexación, cambiar por "index, follow". -->
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://lazza.com.mx/contacto/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
@@ -22,13 +19,20 @@
 <link rel="stylesheet" href="../assets/css/lazza.css?v=20260914">
 <link rel="icon" href="../assets/img/lazza-logo-white.png">
 <!-- Campos que NO se declaran hasta que existan, Contacto-content.md §5:
-     "telephone" (no consta) [Pendiente]
+     "telephone" YA CONSTA desde el 14-sep-2026: el WhatsApp 55 4615 1819 está
+     publicado en las 34 páginas, así que se declara. Es el dato que un motor de
+     IA necesita para responder "cómo contacto a Lazza".
      "openingHoursSpecification" (no consta) [Pendiente]
-     "contactPoint" con correo de dominio propio, mientras sea Gmail no se declara [Pendiente]
+     "email" con correo de dominio propio, mientras sea Gmail no se declara [Pendiente]
      "geo" con coordenadas, se calculan con la dirección confirmada [Pendiente]
      segunda oficina como "location" adicional, sin dirección publicada [Pendiente]
-     El bloque "address" que sigue no sube a producción hasta que Jaime
-     confirme la vigencia del domicilio, ver Contacto-content.md §3.7 y §8.10. -->
+
+     ⚠️ El bloque "address" de abajo se escribió para NO subir a producción
+     hasta que Jaime confirmara la vigencia del domicilio (Contacto-content.md
+     §3.7 y §8.10). Subió igual, y desde el 15-sep-2026 además se indexa: un
+     domicilio sin confirmar, tomado de una presentación de 2020, ahora puede
+     ser citado por Google y por motores de IA como la dirección del despacho.
+     O se confirma o se retira. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,6 +64,14 @@
         "addressCountry": "MX"
       },
       "areaServed": { "@type": "AdministrativeArea", "name": "Zona Metropolitana del Valle de México" },
+      "telephone": "+525546151819",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+525546151819",
+        "url": "https://lazza.com.mx/contacto/",
+        "availableLanguage": ["es-MX"]
+      },
       "founder": { "@id": "https://lazza.com.mx/studio/jaime-lavin#persona" }
     }
   ]

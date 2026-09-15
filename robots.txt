@@ -1,26 +1,79 @@
-# Lazza Arquitectura
+# Lazza Arquitectura — https://lazza.com.mx
 #
-# ESTADO ACTUAL: vista previa en GitHub Pages, cerrada a buscadores.
-# El sitio de producción del despacho sigue siendo lazza.com.mx. Mientras los
-# dos existan, abrir este a indexación crearía dos sitios del mismo despacho
-# compitiendo entre sí, que es lo que más daña el posicionamiento del cliente.
+# ABIERTO A INDEXACIÓN el 15-sep-2026, por decisión de Elías. Hasta esta fecha
+# el sitio estaba cerrado para no competir con el Squarespace de lazza.com.mx;
+# esa razón desapareció cuando aquel expiró y este ocupó el dominio.
 #
-# PARA ABRIR A INDEXACIÓN, el día que este sitio sustituya al actual:
-#   1. Cambiar el bloque de abajo por el que está comentado al final.
-#   2. Quitar <meta name="robots" content="noindex, nofollow"> de todas las
-#      páginas, MENOS de /gracias/ y /404.html, que nunca deben indexarse.
-#   3. Actualizar sitemap.xml con el dominio definitivo.
-#   4. Dar de alta el sitio en Search Console y enviar el sitemap.
+# Solo queda fuera /gracias/, que es una página de destino sin contenido propio.
 
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /gracias/
+
+Sitemap: https://lazza.com.mx/sitemap.xml
 
 # ---------------------------------------------------------------------------
-# Configuración de producción, hoy inactiva:
+# Motores de respuesta y modelos de lenguaje
 #
-# User-agent: *
-# Allow: /
-# Disallow: /gracias/
+# Se declaran uno por uno a propósito. Muchos sitios los bloquean por omisión
+# de sus plantillas, y el despacho quiere lo contrario: que ChatGPT, Claude,
+# Perplexity y Gemini puedan leer y citar el sitio cuando alguien pregunta por
+# arquitectura residencial en el Estado de México.
 #
-# Sitemap: https://lazza.com.mx/sitemap.xml
+# Conviene saber qué hace cada uno, porque no son lo mismo:
+#   · los *SearchBot / *Bot indexan para responder con cita y enlace;
+#   · los *-User entran en vivo cuando una persona pide algo concreto;
+#   · Google-Extended y Applebot-Extended NO afectan la búsqueda normal:
+#     solo deciden si el contenido alimenta Gemini y Apple Intelligence.
 # ---------------------------------------------------------------------------
+
+# OpenAI — ChatGPT
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /gracias/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /gracias/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /gracias/
+
+# Anthropic — Claude
+User-agent: ClaudeBot
+Allow: /
+Disallow: /gracias/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /gracias/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /gracias/
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+Disallow: /gracias/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /gracias/
+
+# Google Gemini y AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Common Crawl, del que se nutren varios modelos
+User-agent: CCBot
+Allow: /
