@@ -29,11 +29,11 @@ ErrorDocument 404 /404.html
   # el sitio recién abierto a indexación, conviene que el primer rastreo
   # encuentre una sola dirección.
 
-  # 1. Primero a https, conservando el host que pidieron
-  RewriteCond %{HTTPS} !=on
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-
-  # 2. Después www → raíz, que es la forma que declaran los canonical
+  # Una sola regla para los dos casos, y a propósito: encadenarlas hacía que
+  # http://www diera dos saltos (a https://www y de ahí a la raíz). Un 301 en
+  # cadena diluye y se rastrea peor; así cualquiera de las tres formas malas
+  # llega en un solo salto a la buena.
+  RewriteCond %{HTTPS} !=on [OR]
   RewriteCond %{HTTP_HOST} ^www\.lazza\.com\.mx$ [NC]
   RewriteRule ^(.*)$ https://lazza.com.mx/$1 [R=301,L]
 </IfModule>
