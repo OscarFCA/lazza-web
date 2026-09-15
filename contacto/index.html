@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contacto | Agenda una conversación | Lazza Arquitectura</title>
-<meta name="description" content="Escríbenos qué quieres construir. Formulario directo al despacho, respuesta personal y una primera conversación para empezar tu proyecto residencial.">
+<meta name="description" content="Escríbenos por WhatsApp qué quieres construir. Te responde el despacho de manera personal para agendar una primera conversación sobre tu proyecto residencial.">
 <!-- El sitio completo está en noindex mientras no se autoriza el lanzamiento.
      Esta página sí debe indexarse el día que el sitio se abra: es la página
      de conversión. Al abrir indexación, cambiar por "index, follow". -->
@@ -39,7 +39,7 @@
       "url": "https://lazza.com.mx/contacto/",
       "name": "Contacto",
       "inLanguage": "es-MX",
-      "description": "Formulario de contacto del despacho y qué sucede después de escribir.",
+      "description": "Cómo escribirle al despacho por WhatsApp y qué sucede después de escribir.",
       "about": { "@id": "https://lazza.com.mx/#organizacion" },
       "isPartOf": { "@id": "https://lazza.com.mx/#sitio" }
     },
@@ -87,7 +87,8 @@
 
 <main id="contenido">
 
-  <!-- 1. Hero corto. Sin fotografía: nada compite con el formulario,
+  <!-- 1. Hero corto. Sin fotografía: nada compite con la única acción de la
+       página, que desde el 14-sep-2026 es el botón de WhatsApp,
        Contacto-content.md §5. -->
   <section class="hero-interior" aria-labelledby="h-contacto">
     <h1 class="h1" id="h-contacto">empieza por una conversación</h1>
@@ -99,104 +100,46 @@
          por nuestro aviso de privacidad. -->
   </section>
 
-  <!-- 2. Formulario. Conversión única del sitio: campos mínimos, cada uno
-       justificado en Contacto-content.md §3.2.
+  <!-- 2. WhatsApp, conversión única de la página.
 
-       DESTINO RESUELTO el 14-sep-2026: el formulario entrega por WhatsApp al
-       55 4615 1819. Sustituye al marcador que hacía POST a ../gracias/, que
-       respondía 200 y perdía el mensaje en silencio. Decisión de Elías: no
-       esperar al correo de dominio propio (la condición dura de
-       Contacto-content.md §7) porque dejaba la única página de conversión sin
-       entregar nada.
+       CAMBIO DE CRITERIO, 14-sep-2026, decisión de Elías: la página pasa a ser
+       WhatsApp primero y el formulario se retira. Invierte a propósito la regla
+       de Contacto-content.md §3.5, "WhatsApp subordinado, nunca botón", que se
+       escribió cuando el destino previsto era un buzón de dominio propio. Ese
+       buzón nunca llegó: el formulario hacía POST a ../gracias/, respondía 200
+       y perdía el mensaje en silencio. Entre un formulario que no entrega y un
+       botón que sí, se eligió el que entrega.
 
-       Cómo funciona: lazza.js valida, arma el mensaje con los campos y abre la
-       conversación. Sin JS el navegador sigue el action y abre el chat sin
-       texto; el mensaje llega igual, solo que lo escribe la persona.
+       Lo que se pierde y hay que saber: ya no se piden correo ni teléfono, y
+       quien no use WhatsApp se queda sin vía desde esta página. El formulario
+       completo vive en el historial de git (commit f8befc2) por si vuelve.
 
-       El consentimiento de la carta viaja dentro del mensaje con su texto
-       exacto, así que el chat queda como registro con fecha y origen. Al
-       conectar algún día una herramienta de envío, revisar si ese registro
-       basta o hace falta almacenarlo aparte.
+       No se promete tiempo de primera respuesta: lo confirma Jaime,
+       Contacto-content.md §8. -->
+  <section class="seccion seccion--estrecha seccion--bg-secondary" aria-labelledby="h-whatsapp">
+    <!-- Encabezado solo para lectores de pantalla, como lo tenía el formulario:
+         visible repetía palabra por palabra el texto del botón que va debajo. -->
+    <h2 class="visualmente-oculto" id="h-whatsapp">Contacto por WhatsApp</h2>
+    <!-- Al retirar el formulario se perdieron los campos que ordenaban el
+         primer mensaje. Esta línea los sustituye: pide los mismos datos, en
+         prosa, para que la conversación no empiece con tres preguntas. -->
+    <p class="texto texto--grande">Cuéntanos dónde es, qué tienes en mente y para cuándo lo quieres. Con eso preparamos la primera conversación.</p>
 
-       El evento form_start (primer foco en cualquier campo) todavía no está
-       implementado: lazza.js mide form_submit y form_error. Se agrega cuando
-       GA4 esté configurado. -->
-  <section class="seccion seccion--bg-secondary" aria-labelledby="h-formulario">
-    <h2 class="visualmente-oculto" id="h-formulario">Formulario de contacto</h2>
-    <form class="form" data-form data-wa="525546151819"
-          action="https://wa.me/525546151819" method="get">
+    <div class="fila-botones" style="margin-top:clamp(32px,4vw,44px)">
+      <a class="btn btn--primario btn--grande btn--wa"
+         href="https://wa.me/525546151819?text=Hola%2C%20escribo%20desde%20el%20sitio%20de%20Lazza.%20Me%20gustar%C3%ADa%20platicar%20sobre%20un%20proyecto."
+         target="_blank" rel="noopener" data-analytics="whatsapp_click">
+        <svg class="wa__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+        Escríbenos por WhatsApp
+      </a>
+    </div>
 
-      <div class="campo">
-        <label class="campo__etiqueta" for="nombre">NOMBRE</label>
-        <span class="campo__ayuda" id="ayuda-nombre">Cómo quieres que te llamemos</span>
-        <input class="campo__control" type="text" id="nombre" name="nombre"
-               autocomplete="name" required aria-describedby="ayuda-nombre">
-        <p class="campo__error" role="alert"
-           data-vacio="Escribe tu nombre para saber con quién conversamos."
-           data-formato="Escribe tu nombre para saber con quién conversamos."></p>
-      </div>
+    <!-- El número, escrito, para quien prefiere guardarlo o llamar desde otro
+         teléfono. Con tel: no: este número es de WhatsApp, no una línea que
+         alguien conteste. -->
+    <p class="nota" style="margin-top:clamp(20px,2.5vw,28px)">O guárdalo: <strong>55 4615 1819</strong></p>
 
-      <div class="campo">
-        <label class="campo__etiqueta" for="correo">CORREO</label>
-        <span class="campo__ayuda" id="ayuda-correo">Para responderte por escrito</span>
-        <input class="campo__control" type="email" id="correo" name="correo"
-               autocomplete="email" required aria-describedby="ayuda-correo">
-        <p class="campo__error" role="alert"
-           data-vacio="Necesitamos tu correo para poder responderte."
-           data-formato="Este correo parece incompleto, revísalo."></p>
-      </div>
-
-      <!-- [Supuesto] Teléfono obligatorio. El embudo real del despacho es
-           conversacional y un lead sin teléfono no entra a él. Si en operación
-           frena envíos, se vuelve opcional: se decide con los datos de
-           form_error, Contacto-content.md §8.8. -->
-      <div class="campo">
-        <label class="campo__etiqueta" for="telefono">TELÉFONO</label>
-        <span class="campo__ayuda" id="ayuda-telefono">Te llamamos solo sobre tu proyecto</span>
-        <input class="campo__control" type="tel" id="telefono" name="telefono"
-               autocomplete="tel" inputmode="tel" pattern="[0-9+()\-\s]{10,}"
-               required aria-describedby="ayuda-telefono">
-        <p class="campo__error" role="alert"
-           data-vacio="Escribe un teléfono con lada para poder llamarte."
-           data-formato="Revisa el número, parece que faltan dígitos."></p>
-      </div>
-
-      <div class="campo">
-        <label class="campo__etiqueta" for="mensaje">MENSAJE (OPCIONAL)</label>
-        <span class="campo__ayuda" id="ayuda-mensaje">Cuéntanos qué quieres construir o transformar</span>
-        <textarea class="campo__control" id="mensaje" name="mensaje" rows="5"
-                  aria-describedby="ayuda-mensaje"></textarea>
-      </div>
-
-      <!-- Casilla de consentimiento: texto canónico único de
-           Aviso-de-privacidad-content.md §4.2. No admite variantes, porque lo
-           que se guarda como evidencia ante una solicitud ARCO es el texto
-           exacto aceptado. Nunca premarcada. Aquí es opcional: la conversión
-           de esta página es el mensaje, no la suscripción. -->
-      <label class="casilla" for="newsletter">
-        <input type="checkbox" id="newsletter" name="newsletter" value="si" data-analytics="newsletter_optin">
-        <span>Quiero recibir la carta mensual. Leí el <a href="../aviso-de-privacidad/">aviso de privacidad</a> y sé que puedo darme de baja cuando quiera.</span>
-      </label>
-
-      <!-- Único botón de la página. Estado "Enviando tu mensaje" durante el
-           envío, nunca deshabilitado por validación previa, §4.3. -->
-      <button class="btn btn--primario" type="submit" data-analytics="cta_contacto_submit">Agenda una primera conversación</button>
-      <!-- Opción B del botón: Empecemos la conversación -->
-      <!-- Opción C del botón: Quiero esa conversación -->
-
-      <!-- Se avisa antes de pulsar, no después: que se abra otra aplicación sin
-           anunciarlo se siente como un error del sitio. -->
-      <p class="nota" style="margin-top:20px">Al enviar se abre WhatsApp con tu mensaje escrito, listo para que lo revises.</p>
-
-      <!-- Estado posterior al envío. No dice "gracias" ni "recibimos tu
-           mensaje": hasta que la persona le dé enviar dentro de WhatsApp, el
-           despacho no ha recibido nada. -->
-      <p class="nota" data-form-estado tabindex="-1" role="status" hidden style="margin-top:16px">Abrimos WhatsApp con tu mensaje. Si no se abrió, escríbenos al <a class="enlace enlace--tenue" href="https://wa.me/525546151819" target="_blank" rel="noopener">55 4615 1819</a>.</p>
-
-      <p class="nota" style="margin-top:20px">Al enviar aceptas el <a class="enlace enlace--tenue" href="../aviso-de-privacidad/">aviso de privacidad</a>. Usamos tus datos solo para responderte.</p>
-      <!-- Línea de privacidad, opción B: Tus datos se usan solo para atender tu
-           mensaje, como explica el aviso de privacidad. -->
-    </form>
+    <p class="nota" style="margin-top:12px">Al escribirnos aceptas el <a class="enlace enlace--tenue" href="../aviso-de-privacidad/">aviso de privacidad</a>. Usamos tus datos solo para responderte.</p>
   </section>
 
   <!-- 3. Qué pasa cuando nos escribes. Resuelve la ansiedad posterior al envío
@@ -255,12 +198,13 @@
          a conocernos. -->
   </section>
 
-  <!-- 5 y 6. WhatsApp subordinado, nunca botón, y salida a preguntas frecuentes. -->
-  <section class="seccion seccion--estrecha seccion--bg-primary" aria-label="Otras formas de escribir">
-    <!-- [Pendiente] Número de WhatsApp oficial del despacho. El href queda
-         inerte hasta que Jaime lo confirme. -->
-    <p class="texto">¿Prefieres escribir por WhatsApp? Aquí también te leemos. <a class="enlace enlace--tenue" href="#whatsapp-pendiente" data-analytics="whatsapp_click">Escríbenos por WhatsApp</a></p>
-    <!-- Opción B: Si te queda más cómodo WhatsApp, escríbenos por ahí. -->
+  <!-- 6. Salida a preguntas frecuentes.
+
+       Aquí vivía la línea de "WhatsApp subordinado" con el href inerte
+       #whatsapp-pendiente, esperando el número que Jaime nunca confirmó.
+       Se retiró el 14-sep-2026: WhatsApp dejó de ser la alternativa para
+       volverse la vía principal, arriba, y repetirlo aquí lo devaluaba. -->
+  <section class="seccion seccion--estrecha seccion--bg-primary" aria-label="Antes de escribir">
     <p class="texto">¿Dudas antes de escribir? <a class="enlace enlace--tenue" href="../preguntas-frecuentes/" data-analytics="faq_link_click">Lee las preguntas frecuentes</a></p>
     <!-- Opción B: Si prefieres leer primero, las preguntas frecuentes están aquí. -->
   </section>

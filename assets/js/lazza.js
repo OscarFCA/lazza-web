@@ -295,53 +295,16 @@
         }
       });
 
+      /* El 14-sep-2026 /contacto/ pasó a ser WhatsApp primero y su formulario
+         se retiró, así que hoy esta validación solo la usa el de newsletter.
+         Aquí vivió un armador de mensaje de WhatsApp (data-wa) que duró unas
+         horas; está en el commit f8befc2 si el formulario vuelve. */
       if (!valido) {
         e.preventDefault();
         if (primerError) primerError.focus();
         enviar('form_error', { pagina: document.body.getAttribute('data-pagina') || '' });
-        return;
-      }
-
-      enviar('form_submit', { pagina: document.body.getAttribute('data-pagina') || '' });
-
-      /* El formulario entrega por WhatsApp: no hay backend ni buzón de dominio
-         propio todavía, y el POST anterior se perdía en silencio. Si el form
-         declara data-wa, aquí se arma el mensaje y se abre la conversación.
-         Sin JS el navegador sigue el action, que abre el chat sin texto: menos
-         cómodo, pero el mensaje llega igual. */
-      var numero = form.getAttribute('data-wa');
-      if (!numero) return;
-
-      e.preventDefault();
-
-      var valor = function (nombre) {
-        var campo = form.querySelector('[name="' + nombre + '"]');
-        return campo ? campo.value.trim() : '';
-      };
-
-      var lineas = ['Hola, escribo desde el sitio de Lazza.', ''];
-      if (valor('nombre'))   lineas.push('Nombre: ' + valor('nombre'));
-      if (valor('correo'))   lineas.push('Correo: ' + valor('correo'));
-      if (valor('telefono')) lineas.push('Teléfono: ' + valor('telefono'));
-      if (valor('mensaje'))  lineas.push('', valor('mensaje'));
-
-      /* El consentimiento viaja con su texto exacto: es lo que vale como
-         evidencia ante una solicitud ARCO, y el chat queda como registro. */
-      var carta = form.querySelector('[name="newsletter"]');
-      if (carta && carta.checked) {
-        lineas.push('', 'Quiero recibir la carta mensual. Leí el aviso de privacidad y sé que puedo darme de baja cuando quiera.');
-      }
-
-      var url = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(lineas.join('\n'));
-      var ventana = window.open(url, '_blank', 'noopener');
-      if (!ventana) window.location.href = url;
-
-      /* Nada de "gracias": hasta que la persona le dé enviar en WhatsApp no ha
-         mandado nada, y decirle lo contrario sería mentirle. */
-      var estado = form.querySelector('[data-form-estado]');
-      if (estado) {
-        estado.hidden = false;
-        estado.focus();
+      } else {
+        enviar('form_submit', { pagina: document.body.getAttribute('data-pagina') || '' });
       }
     });
   }

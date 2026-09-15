@@ -266,6 +266,15 @@ button { font: inherit; border-radius: 0; }
 
 .btn--grande { padding: 16px 34px; }
 
+/* Botón con el glifo de WhatsApp delante. El texto manda: el icono solo
+   confirma a dónde lleva, por eso va al tamaño de la línea y no más grande. */
+.btn--wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.btn--wa .wa__icono { width: 18px; height: 18px; }
+
 .enlace {
   display: inline-block;
   font: 400 14px/1.4 var(--font-body);
