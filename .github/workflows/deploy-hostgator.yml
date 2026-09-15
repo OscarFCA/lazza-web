@@ -41,4 +41,5 @@ jobs:
             **/.github/**
             **/node_modules/**
             **/.DS_Store
+            **/scripts/**
             README.md

@@ -54,6 +54,13 @@ ErrorDocument 404 /404.html
 # El sitio son 19 MB de fotografía y un video de hero: cachearlos fuerte es
 # la diferencia entre una segunda visita instantánea y una lenta. El HTML se
 # revalida siempre, para que un deploy se vea de inmediato.
+#
+# ⚠️ AL TOCAR lazza.css O lazza.js, SUBIR EL ?v= DE LAS 34 PÁGINAS.
+# El 14-sep-2026 esto mordió: el CSS nuevo estaba en el servidor, pero los
+# navegadores seguían con el de un mes antes y el botón de WhatsApp se veía
+# roto, con el glifo en su propia línea. El HTML sí se revalida, así que basta
+# con que el enlace cambie para que el navegador pida el archivo nuevo.
+# Hay un script para hacerlo de una pasada: scripts/versionar-assets.py
 # ---------------------------------------------------------------------------
 <IfModule mod_expires.c>
   ExpiresActive On

@@ -267,13 +267,20 @@ button { font: inherit; border-radius: 0; }
 .btn--grande { padding: 16px 34px; }
 
 /* Botón con el glifo de WhatsApp delante. El texto manda: el icono solo
-   confirma a dónde lleva, por eso va al tamaño de la línea y no más grande. */
+   confirma a dónde lleva, por eso va al tamaño de la línea y no más grande.
+
+   La separación es margin y no gap a propósito: en móvil .btn pasa a
+   display:block y ahí el gap no existe, así que el glifo quedaba pegado a la
+   primera letra. El margin funciona en los dos modos. */
 .btn--wa {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
 }
-.btn--wa .wa__icono { width: 18px; height: 18px; }
+.btn--wa .wa__icono {
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+}
 
 .enlace {
   display: inline-block;
@@ -1234,8 +1241,12 @@ textarea.campo__control { min-height: 120px; resize: vertical; }
 
 .wa:focus-visible { outline: 1px solid var(--color-accent); outline-offset: 3px; }
 
+/* inline-block y no block: si por lo que sea el contenedor no llega a ser
+   flex —un CSS viejo en caché, por ejemplo— el glifo se queda en la línea del
+   texto en vez de saltar a una propia y romper el botón. */
 .wa__icono {
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
   width: 22px;
   height: 22px;
   flex: none;
