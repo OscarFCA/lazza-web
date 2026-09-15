@@ -18,25 +18,24 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # TEMPORAL 11-sep-2026 — DESACTIVADO durante la propagación del DNS.
-  # La raíz todavía resuelve a Squarespace en varios resolvers (Google, Quad9,
-  # OpenDNS) mientras que www ya apunta aquí. Con esta regla activa, quien entra
-  # por www era devuelto a la raíz y acababa en el Squarespace caído; además el
-  # destino es https y aún no hay certificado. Reactivar cuando la raíz propague
-  # en todos los resolvers y AutoSSL haya emitido.
-  # RewriteCond %{HTTP_HOST} ^www\.lazza\.com\.mx$ [NC]
-  # RewriteRule ^(.*)$ https://lazza.com.mx/$1 [R=301,L]
+  # REACTIVADAS el 15-sep-2026. Se cumplieron las dos condiciones que las
+  # tenían esperando: la raíz ya propagó en todos los resolvers y AutoSSL
+  # emitió el certificado el 12-sep (cubre lazza.com.mx y www, vence el
+  # 11-dic-2026 y se renueva solo).
+  #
+  # Hasta hoy el mismo contenido respondía en cuatro URLs —http y https, con y
+  # sin www—, que es contenido duplicado de manual. Los canonical ya apuntaban
+  # a https://lazza.com.mx/, pero un canonical sugiere y un 301 resuelve. Con
+  # el sitio recién abierto a indexación, conviene que el primer rastreo
+  # encuentre una sola dirección.
 
-  # ---------------------------------------------------------------------------
-  # FORZAR HTTPS — DESACTIVADO A PROPÓSITO.
-  #
-  # Descomentar SOLO cuando AutoSSL ya haya emitido el certificado de
-  # lazza.com.mx en cPanel. Activarlo antes deja el sitio inaccesible:
-  # redirige a un https que todavía no tiene certificado válido.
-  #
-  # RewriteCond %{HTTPS} !=on
-  # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-  # ---------------------------------------------------------------------------
+  # 1. Primero a https, conservando el host que pidieron
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # 2. Después www → raíz, que es la forma que declaran los canonical
+  RewriteCond %{HTTP_HOST} ^www\.lazza\.com\.mx$ [NC]
+  RewriteRule ^(.*)$ https://lazza.com.mx/$1 [R=301,L]
 </IfModule>
 
 # ---------------------------------------------------------------------------
