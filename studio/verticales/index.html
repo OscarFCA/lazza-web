@@ -57,6 +57,22 @@
   }
 }
 </script>
+<!-- Google tag (gtag.js) — GA4, propiedad G-MYVJ1GQ1NR.
+     Instalada el 15-sep-2026, el día después de abrir el sitio a buscadores.
+     lazza.js ya medía con data-analytics y su función enviar() comprobaba
+     window.gtag antes de disparar: hasta hoy no había gtag y los eventos se
+     perdían en silencio. Con esta etiqueta empiezan a llegar solos, sin tocar
+     el JS: clics de CTA, whatsapp_click, scroll_75 y los enlaces de autor.
+     Va al final del head a propósito, para no empujar title y description,
+     que es lo primero que leen los rastreadores. Es async: da igual dónde. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MYVJ1GQ1NR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MYVJ1GQ1NR');
+</script>
 </head>
 <body data-pagina="verticales">
 
