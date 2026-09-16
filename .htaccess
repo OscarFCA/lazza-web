@@ -36,6 +36,83 @@ ErrorDocument 404 /404.html
   RewriteCond %{HTTPS} !=on [OR]
   RewriteCond %{HTTP_HOST} ^www\.lazza\.com\.mx$ [NC]
   RewriteRule ^(.*)$ https://lazza.com.mx/$1 [R=301,L]
+
+  # -------------------------------------------------------------------------
+  # Redirecciones del sitio viejo
+  #
+  # Google todavía tiene indexado el árbol de URLs del Squarespace que ocupó
+  # este dominio hasta que expiró la suscripción, y todas esas direcciones
+  # devolvían 404 en el sitio nuevo: cada resultado de búsqueda de la marca
+  # era una puerta cerrada.
+  #
+  # Son 301 y no peticiones de retiro a propósito. Un 301 le dice a Google
+  # "esto se mudó aquí" y le pasa a la página nueva la autoridad que la vieja
+  # acumuló en años; el retiro solo la borra y tira ese valor. Además el
+  # retiro de Search Console dura seis meses y luego vuelve.
+  #
+  # Inventario tomado del archivo de la Wayback Machine y verificado el
+  # 15-sep-2026: 30 páginas de la época Squarespace (capturas de 2019) y el
+  # árbol del sitio PHP anterior (2008 a 2012). Los 14 destinos responden 200.
+  #
+  # Los destinos van en ABSOLUTO y con https a propósito. Con destino relativo,
+  # una petición que llega por http se redirige primero a http://…/destino y
+  # solo después a https, que son dos saltos; en absoluto se resuelve en uno.
+  #
+  # Van después de la canonicalización pero con destino ya canónico, así que
+  # cualquier combinación de esquema y host aterriza de un salto.
+  # -------------------------------------------------------------------------
+
+  # Obras que ya tienen ficha propia
+  RewriteRule ^cantil/?$                  https://lazza.com.mx/obras/cantil/ [R=301,L]
+  RewriteRule ^avdelclub/?$               https://lazza.com.mx/obras/av-del-club/ [R=301,L]
+  RewriteRule ^bosques/?$                 https://lazza.com.mx/obras/ph-club-de-golf-bosques/ [R=301,L]
+  RewriteRule ^meseta/?$                  https://lazza.com.mx/obras/meseta/ [R=301,L]
+  RewriteRule ^mimbres/?$                 https://lazza.com.mx/obras/mimbres/ [R=301,L]
+  RewriteRule ^vallescondido-el-parque/?$ https://lazza.com.mx/obras/vallescondido-el-parque/ [R=301,L]
+
+  # Proyectos que ya tienen ficha propia
+  RewriteRule ^arboro-residencial/?$      https://lazza.com.mx/proyectos/arboro-residencial/ [R=301,L]
+  RewriteRule ^vila-punta/?$              https://lazza.com.mx/proyectos/vila-punta/ [R=301,L]
+
+  # Obras sin ficha todavía: ph altezza y palma del río esperan fotografía.
+  # Al índice de obras y no a un 404. Cuando se publiquen, apuntar cada una
+  # a la suya.
+  RewriteRule ^ph-altezza/?$              https://lazza.com.mx/obras/ [R=301,L]
+  RewriteRule ^palma-del-rio/?$           https://lazza.com.mx/obras/ [R=301,L]
+
+  # Secciones e índices. /obras, /contacto y /blog no necesitan regla: la ruta
+  # vieja y la nueva coinciden y ya responden 200.
+  RewriteRule ^estudio/?$                 https://lazza.com.mx/studio/ [R=301,L]
+  RewriteRule ^pagina-nueva/?$            https://lazza.com.mx/studio/ [R=301,L]
+  RewriteRule ^galerialazzaobras/?$       https://lazza.com.mx/obras/ [R=301,L]
+  RewriteRule ^projects/?$                https://lazza.com.mx/proyectos/ [R=301,L]
+  RewriteRule ^publicaciones/?$           https://lazza.com.mx/blog/ [R=301,L]
+  RewriteRule ^videos/?$                  https://lazza.com.mx/ [R=301,L]
+  RewriteRule ^lazza-home/?$              https://lazza.com.mx/ [R=301,L]
+
+  # Las galerías numeradas de Squarespace. En el archivo están la 1, 2, 3, 4,
+  # 5, 23, 38 y 48, sin correspondencia una a una: eran el desorden de URLs
+  # que señaló la auditoría. Van al índice de obras, que es lo que la persona
+  # buscaba.
+  RewriteRule ^nuevo-gallery(-[0-9]+)?/?$ https://lazza.com.mx/obras/ [R=301,L]
+
+  # Restos del sitio PHP anterior a Squarespace (2008 a 2012). /gresidencial
+  # es la más archivada de todas, con 55 capturas entre 2009 y 2011, así que
+  # de indexada algo le queda.
+  RewriteRule ^ee/nosotros/?$             https://lazza.com.mx/studio/ [R=301,L]
+  RewriteRule ^ee/obras/?$                https://lazza.com.mx/obras/ [R=301,L]
+  RewriteRule ^ee/proyectos/?$            https://lazza.com.mx/proyectos/ [R=301,L]
+  RewriteRule ^ee/contacto/?$             https://lazza.com.mx/contacto/ [R=301,L]
+  RewriteRule ^ee/publicaciones/?$        https://lazza.com.mx/blog/ [R=301,L]
+  RewriteRule ^ee/servicios/?$            https://lazza.com.mx/studio/ [R=301,L]
+  RewriteRule ^gproyectos/?$              https://lazza.com.mx/proyectos/ [R=301,L]
+  RewriteRule ^gresidencial/?$            https://lazza.com.mx/obras/ [R=301,L]
+  RewriteRule ^(itop_|ibot_|index2)       https://lazza.com.mx/ [R=301,L]
+
+  # Cualquier resto de /ee/ que no tenga regla propia, como
+  # /ee/index.php/contacto/gracias, que sí está archivada. Va al final para
+  # no pisar las anteriores.
+  RewriteRule ^ee(/.*)?$                  https://lazza.com.mx/ [R=301,L]
 </IfModule>
 
 # ---------------------------------------------------------------------------
