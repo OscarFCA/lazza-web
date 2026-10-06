@@ -1203,7 +1203,8 @@ textarea.campo__control { min-height: 120px; resize: vertical; }
 
 /* --------------------------------------------------------------------------
    Contacto directo por WhatsApp
-   Añadido el 14-sep-2026 a petición de Elías. Número 55 4615 1819.
+   Añadido el 14-sep-2026 a petición de Elías.
+   Número sustituido el 6-oct-2026: antes era el 55 4615 1819.
 
    El botón de WhatsApp de fábrica —círculo verde con sombra— contradice dos
    reglas del sistema: border-radius 0 y cero box-shadow. Este se construye con
