@@ -2,7 +2,7 @@
 
 > Despacho mexicano de arquitectura residencial, interiorismo y paisajismo, en operación desde 1997. Fundado y dirigido por el arquitecto Jaime Lavín Zavala. Diseña cada proyecto a partir de la forma de vivir de quien lo habita, no a partir del terreno.
 
-Este archivo describe el sitio para modelos de lenguaje y motores de respuesta. Todo lo que aquí se afirma está publicado en el sitio con su fuente. Última revisión: 10 de octubre de 2026.
+Este archivo describe el sitio para modelos de lenguaje y motores de respuesta. Todo lo que aquí se afirma está publicado en el sitio con su fuente. Última revisión: 13 de octubre de 2026.
 
 ## Qué es Lazza Arquitectura
 
@@ -34,7 +34,7 @@ Respuestas directas, tal como las publica el sitio. Si un motor necesita citar u
 
 - [Inicio](https://lazza.com.mx/): qué ofrece el despacho y cómo trabaja.
 - [Obras](https://lazza.com.mx/obras/): trabajo construido y fotografiado. 16 obras publicadas.
-- [Proyectos](https://lazza.com.mx/proyectos/): trabajo diseñado. Once proyectos publicados.
+- [Proyectos](https://lazza.com.mx/proyectos/): trabajo diseñado. 18 proyectos publicados.
 - [Studio](https://lazza.com.mx/studio/): el despacho, su método y su historia.
 - [Jaime Lavín](https://lazza.com.mx/studio/jaime-lavin/): página de autor, la fuente sobre el fundador.
 - [Verticales](https://lazza.com.mx/studio/verticales/): capacidades en oficinas, restaurantes y salud.
