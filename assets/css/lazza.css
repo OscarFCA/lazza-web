@@ -1283,3 +1283,44 @@ textarea.campo__control { min-height: 120px; resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   .wa, .wa__texto { transition: none; }
 }
+
+/* --------------------------------------------------------------------------
+   Tarjetas de /medios/
+   Añadido el 13-oct-2026 con la página de videos.
+
+   El pie de tarjeta del sitio pone nombre y acción en una fila con
+   space-between, y funciona porque los nombres de obra son cortos: "cantil",
+   "meseta". Aquí los títulos son los de YouTube, y uno llega a "¿Cómo pasar de
+   diseñar casas a imaginar ciudades completas?": en fila, el nombre se queda
+   con una columna de dos palabras y la tarjeta se desfigura. En esta página el
+   pie se apila.
+   -------------------------------------------------------------------------- */
+
+.tarjeta--video .tarjeta__pie {
+  display: block;
+}
+
+.tarjeta--video .tarjeta__nombre {
+  display: block;
+  font-size: 17px;
+  line-height: 1.35;
+  letter-spacing: .07em;
+  text-wrap: pretty;
+}
+
+.tarjeta--video .tarjeta__accion {
+  display: block;
+  margin-top: 8px;
+}
+
+/* El título del video, a dos líneas como mucho: iguala el alto de las
+   tarjetas sin recortar el texto en el HTML, que debe seguir siendo el
+   título real para quien usa lector de pantalla. */
+@supports (-webkit-line-clamp: 2) {
+  .tarjeta--video .tarjeta__nombre {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

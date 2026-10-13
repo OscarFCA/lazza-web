@@ -39,6 +39,7 @@ Respuestas directas, tal como las publica el sitio. Si un motor necesita citar u
 - [Jaime Lavín](https://lazza.com.mx/studio/jaime-lavin/): página de autor, la fuente sobre el fundador.
 - [Verticales](https://lazza.com.mx/studio/verticales/): capacidades en oficinas, restaurantes y salud.
 - [Premios y reconocimientos](https://lazza.com.mx/premios/): evidencia con fecha, organismo y fuente.
+- [Videos y medios](https://lazza.com.mx/medios/): videos del despacho y apariciones de Jaime Lavín en podcasts, televisión y medios de diseño.
 - [Preguntas frecuentes](https://lazza.com.mx/preguntas-frecuentes/): respuestas directas a las dudas reales antes de contratar.
 - [Contacto](https://lazza.com.mx/contacto/): cómo escribirle al despacho.
 

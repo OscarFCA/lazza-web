@@ -6,7 +6,7 @@ import pathlib, re
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 # Subir esta fecha cada vez que se toque lazza.css o lazza.js, y correr:
 #   python3 scripts/versionar-assets.py
-VERSION = "20260914"
+VERSION = "20261013"
 
 paginas = sorted(p for p in RAIZ.rglob("*.html") if ".git" not in p.parts)
 cambiadas = 0
