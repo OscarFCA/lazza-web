@@ -109,6 +109,11 @@ ErrorDocument 404 /404.html
   RewriteRule ^gresidencial/?$            https://lazza.com.mx/obras/ [R=301,L]
   RewriteRule ^(itop_|ibot_|index2)       https://lazza.com.mx/ [R=301,L]
 
+  # Bellavista cambió de nombre el 13-oct-2026, horas después de publicarse:
+  # "versión original" pasó a "v1". La URL vieja apenas vivió, pero el 301
+  # cuesta una línea y evita que quede suelta si alguien ya la rastreó.
+  RewriteRule ^proyectos/bellavista-version-original/?$ https://lazza.com.mx/proyectos/bellavista-v1/ [R=301,L]
+
   # Cualquier resto de /ee/ que no tenga regla propia, como
   # /ee/index.php/contacto/gracias, que sí está archivada. Va al final para
   # no pisar las anteriores.
