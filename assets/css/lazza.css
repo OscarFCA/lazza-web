@@ -1324,3 +1324,46 @@ textarea.campo__control { min-height: 120px; resize: vertical; }
     overflow: hidden;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Tira de medios de la home
+   Añadida el 13-oct-2026.
+
+   Elías pidió un carrusel. El sistema lo prohíbe —la misma regla que veta el
+   video con sonido veta el carrusel, y §8 dice que casi nada se mueve—, así
+   que esto es lo que concilia las dos cosas: una tira que se desplaza cuando
+   la persona la empuja y se queda quieta cuando la suelta. Sin rotación
+   automática, sin flechas, sin puntos.
+
+   La última tarjeta queda cortada a propósito: es lo que avisa de que hay más
+   a la derecha, sin tener que decirlo con una flecha.
+   -------------------------------------------------------------------------- */
+
+.tira {
+  display: flex;
+  gap: clamp(16px, 2vw, 24px);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-padding-left: var(--grid-margin);
+  /* se sale del padding de la sección para sangrar hasta el borde */
+  margin-inline: calc(var(--grid-margin) * -1);
+  padding-inline: var(--grid-margin);
+  padding-bottom: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-text-muted) transparent;
+  overscroll-behavior-x: contain;
+}
+
+.tira::-webkit-scrollbar { height: 3px; }
+.tira::-webkit-scrollbar-track { background: rgba(255, 255, 255, .08); }
+.tira::-webkit-scrollbar-thumb { background: var(--color-text-muted); }
+
+.tira > * {
+  flex: 0 0 clamp(240px, 30vw, 320px);
+  scroll-snap-align: start;
+}
+
+.tira:focus-visible {
+  outline: 1px solid var(--color-text-secondary);
+  outline-offset: 4px;
+}
