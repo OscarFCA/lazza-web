@@ -25,11 +25,15 @@ Esta es una implementación completa lista para revisión, **no un sitio publica
 
 Va mudo, en bucle, sin controles y sin audio en el archivo. La regla de marca prohíbe el video con sonido y el carrusel, no el movimiento: aquí no hay nada que el visitante tenga que operar.
 
-**El original venía de 23 MB, 15.3 s y con audio. Se recortó al tramo de 3.1 a 10.9 segundos**, y quedó en 2.5 MB entre los tres archivos. Fuera del corte quedaron, a propósito, tres cosas que las reglas del proyecto no permiten publicar:
+**Desde el 13-oct-2026 el hero son dos tramos de la misma casa, Jacarandas, y dura 14.3 s.**
+
+Abre con 6.5 s de la fachada del acceso, del minuto 6:38 al 6:44.5 de `JACARANDASMASTER` (6:57, en el Drive del despacho), que pidió el cliente. El corte en 6:44.5 no es arbitrario: ahí arranca el fundido a negro del cierre y acto seguido entran los logos de LAMZO, Lazza y OAL Arquitectos — un logo de otro despacho en el hero es un problema de atribución. Después sigue el tramo de siempre.
+
+**El material original venía de 23 MB, 15.3 s y con audio. Se recortó al tramo de 3.1 a 10.9 segundos.** El montaje completo pesa 3.6 MB entre los tres archivos. Fuera del corte quedaron, a propósito, tres cosas que las reglas del proyecto no permiten publicar:
 
 | Qué se recortó | Por qué |
 |---|---|
-| El acceso nocturno del inicio | Tiene el número de casa visible en el muro, y un número de casa es una dirección |
+| El acceso nocturno del inicio | Tenía el número de casa visible en el muro. **Levantado el 13-oct-2026**: Elías lo autorizó porque el residencial no aparece en Google Maps y el cliente pidió esa toma. El número se ve en el primer tramo del hero actual |
 | La toma aérea del final | Muestra el fraccionamiento completo con las casas vecinas: geolocaliza la obra |
 | El interior con el automóvil | Un vehículo particular dentro de la casa identifica al dueño en su propio círculo |
 
